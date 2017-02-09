@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1020762197958",
+    "firebase_url": "https://mobilelearning1-576b3.firebaseio.com",
+    "project_id": "mobilelearning1-576b3",
+    "storage_bucket": "mobilelearning1-576b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020762197958:android:441f4429714c17e7",
+        "android_client_info": {
+          "package_name": "com.example.shivam.mobilelearning1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020762197958-ua8dvofk8d5ium6jfvlbbf1df1sd9vbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA82TW20DsURMlfJXVFK-aaeMH7T-Yh628"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020762197958-ua8dvofk8d5ium6jfvlbbf1df1sd9vbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.shivam.mobilelearning1.QuestionnaireScrollingActivity"
+    tools:showIn="@layout/activity_questionnaire_scrolling">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="1. I understand something better after I"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q1_textView"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans1_radioGroup">
+
+            <RadioButton
+                android:text="(a) try it out."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans1a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) think it through."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans1b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="2. I would rather be considered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q2_textView"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans2_radioGroup">
+
+            <RadioButton
+                android:text="(a) realistic."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans2a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) innovative."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans2b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="3. When I think about what I did yesterday, I am most likely to get"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q3_textView"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans3_radioGroup">
+
+            <RadioButton
+                android:text="(a) a picture."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans3a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) words."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans3b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="4. I tend to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q4_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans4_radioGroup">
+
+            <RadioButton
+                android:text="(a) understand details of a subject but may be fuzzy about its overall structure."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans4a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) understand the overall structure but may be fuzzy about details."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans4b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="5. When I am learning something new, it helps me to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q5_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans5_radioGroup">
+
+            <RadioButton
+                android:text="(a) talk about it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans5a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) think about it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans5b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="6. If I were a teacher, I would rather teach a course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q6_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans6_radioGroup">
+
+            <RadioButton
+                android:text="(a) that deals with facts and real life situations."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans6a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) that deals with ideas and theories."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans6b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="7. I prefer to get new information in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q7_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans7_radioGroup">
+
+            <RadioButton
+                android:text="(a) pictures, diagrams, graphs, or maps."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans7a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) written directions or verbal information."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans7b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="8. Once I understand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q8_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans8_radioGroup">
+
+            <RadioButton
+                android:text="(a) all the parts, I understand the whole thing."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans8a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) the whole thing, I see how the parts fit."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans8b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="9. In a study group working on difficult material, I am more likely to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q9_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans9_radioGroup">
+
+            <RadioButton
+                android:text="(a) jump in and contribute ideas."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans9a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) sit back and listen."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans9b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="10. I find it easier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q10_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans10_radioGroup">
+
+            <RadioButton
+                android:text="(a) to learn facts."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans10a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) to learn concepts."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans10b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="11. In a book with lots of pictures and charts, I am likely to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q11_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans11_radioGroup">
+
+            <RadioButton
+                android:text="(a) look over the pictures and charts carefully."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans11a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) focus on the written text."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans11b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="12. When I solve math problems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q12_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans12_radioGroup">
+
+            <RadioButton
+                android:text="(a) I usually work my way to the solutions one step at a time."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans12a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) I often just see the solutions but then have to struggle to figure out the steps to get to them."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans12b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="13. In classes I have taken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q13_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans13_radioGroup">
+
+            <RadioButton
+                android:text="(a) I have usually gotten to know many of the students."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans13a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) I have rarely gotten to know many of the students."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans13b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="14. In reading non-fiction, I prefer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q14_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans14_radioGroup">
+
+            <RadioButton
+                android:text="(a) something that teaches me new facts or tells me how to do something."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans14a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) something that gives me new ideas to think about."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans14b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="15. I like teachers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q15_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans15_radioGroup">
+
+            <RadioButton
+                android:text="(a) who put a lot of diagrams on the board."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans15a_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) who spend a lot of time explaining."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans15b_radioButton"
+                android:textSize="12sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="16. When I'm analyzing a story or a novel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q16_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans16_radioGroup">
+
+            <RadioButton
+                android:text="(a) I think of the incidents and try to put them together to figure out the themes."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans16a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) I just know what the themes are when I finish reading and then I have to go back and find the incidents that demonstrate them."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans16b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="17. When I start a homework problem, I am more likely to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q17_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans17_radioGroup">
+
+            <RadioButton
+                android:text="(a) start working on the solution immediately."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans17a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) try to fully understand the problem first."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans17b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="18. I prefer the idea of"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q18_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans18_radioGroup">
+
+            <RadioButton
+                android:text="(a) certainty."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans18a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) theory."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans18b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="19. I remember best"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q19_textView"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans19_radioGroup">
+
+            <RadioButton
+                android:text="(a) what I see."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans19a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) what I hear."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans19b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="20. It is more important to me that an instructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q20_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans20_radioGroup">
+
+            <RadioButton
+                android:text="(a) lay out the material in clear sequential steps."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans20a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) give me an overall picture and relate the material to other subjects."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans20b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="21. I prefer to study"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q21_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans21_radioGroup">
+
+            <RadioButton
+                android:text="(a) in a study group."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans21a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) alone."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans21b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="22. I am more likely to be considered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q22_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans22_radioGroup">
+
+            <RadioButton
+                android:text="(a) careful about the details of my work."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans22a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) creative about how to do my work."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans22b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="23. When I get directions to a new place, I prefer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q23_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans23_radioGroup">
+
+            <RadioButton
+                android:text="(a) a map."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans23a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) written instructions."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans23b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="24. I learn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q24_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans24_radioGroup">
+
+            <RadioButton
+                android:text="(a) at a fairly regular pace. If I study hard, I'll &quot;get it.&quot;"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans24a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) in fits and starts. I'll be totally confused and then suddenly it all &quot;clicks.&quot;"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans24b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="25. I would rather first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q25_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans25_radioGroup">
+
+            <RadioButton
+                android:text="(a) try things out."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans25a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) think about how I'm going to do it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans25b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="26. When I am reading for enjoyment, I like writers to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q26_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans26_radioGroup">
+
+            <RadioButton
+                android:text="(a) clearly say what they mean."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans26a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) say things in creative, interesting ways."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans26b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="27. When I see a diagram or sketch in class, I am most likely to remember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q27_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans27_radioGroup">
+
+            <RadioButton
+                android:text="(a) the picture."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans27a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) what the instructor said about it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans27b_radioButton"
+                android:layout_weight="1" />
+
+        </RadioGroup>
+
+        <TextView
+            android:text="28. When considering a body of information, I am more likely to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q28_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans28_radioGroup">
+
+            <RadioButton
+                android:text="(a) focus on details and miss the big picture."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans28a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) try to understand the big picture before getting into the details."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans28b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="29. I more easily remember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q29_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans29_radioGroup">
+
+            <RadioButton
+                android:text="(a) something I have done."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans29a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) something I have thought a lot about."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans29b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="30. When I have to perform a task, I prefer to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q30_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans30_radioGroup">
+
+            <RadioButton
+                android:text="(a) master one way of doing it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans30a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) come up with new ways of doing it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans30b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="31. When someone is showing me data, I prefer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q31_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans31_radioGroup">
+
+            <RadioButton
+                android:text="(a) charts or graphs."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans31a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) text summarizing the results."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans31b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="32. When writing a paper, I am more likely to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q32_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans32_radioGroup">
+
+            <RadioButton
+                android:text="(a) work on (think about or write) the beginning of the paper and progress forward."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans32a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="work on (think about or write) different parts of the paper and then order them."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans32b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="33. When I have to work on a group project, I first want to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q33_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans33_radioGroup">
+
+            <RadioButton
+                android:text='(a) have "group brainstorming" where everyone contributes ideas.'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans33a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) brainstorm individually and then come together as a group to compare ideas."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans33b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="34. I consider it higher praise to call someone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q34_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans34_radioGroup">
+
+            <RadioButton
+                android:text="(a) sensible."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans34a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) imaginative."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans34b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="35. When I meet people at a party, I am more likely to remember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q35_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans35_radioGroup">
+
+            <RadioButton
+                android:text="(a) what they looked like."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans35a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) what they said about themselves."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans35b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="36. When I am learning a new subject, I prefer to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q36_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans36_radioGroup">
+
+            <RadioButton
+                android:text="(a) stay focused on that subject, learning as much about it as I can."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans36a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) try to make connections between that subject and related subjects."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans36b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="37. I am more likely to be considered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q37_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans37_radioGroup">
+
+            <RadioButton
+                android:text="(a) outgoing."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans37a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) reserved."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans37b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="38. I prefer courses that emphasize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q38_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans38_radioGroup">
+
+            <RadioButton
+                android:text="(a) concrete material (facts, data)."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans38a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) abstract material (concepts, theories)."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans38b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="39. For entertainment, I would rather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q39_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans39_radioGroup">
+
+            <RadioButton
+                android:text="(a) watch television."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans39a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) read a book."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans39b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="40. Some teachers start their lectures with an outline of what they will cover. Such outlines are"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q40_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans40_radioGroup">
+
+            <RadioButton
+                android:text="(a) somewhat helpful to me."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans40a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) very helpful to me."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans40b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="41. The idea of doing homework in groups, with one grade for the entire group,"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q41_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans41_radioGroup">
+
+            <RadioButton
+                android:text="(a) appeals to me."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans41a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) does not appeal to me."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans41b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="42. When I am doing long calculations,"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q42_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans42_radioGroup">
+
+            <RadioButton
+                android:text="(a) I tend to repeat all my steps and check my work carefully."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans42a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) I find checking my work tiresome and have to force myself to do it."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans42b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="43. I tend to picture places I have been"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q43_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans43_radioGroup">
+
+            <RadioButton
+                android:text="(a) easily and fairly accurately."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans43a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) with difficulty and without much detail."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans43b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="44. When solving problems in a group, I would be more likely to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/q44_textView" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ans44_radioGroup">
+
+            <RadioButton
+                android:text="(a) think of the steps in the solution process."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans44a_radioButton"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="(b) think of possible consequences or applications of the solution in a wide range of areas."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans44b_radioButton"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <Button
+            android:text="Submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SubmitAnswerButton" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
