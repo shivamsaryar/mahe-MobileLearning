@@ -1,5 +1,6 @@
 package com.example.shivam.mobilelearning1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -902,6 +903,8 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
                     //CALL FUNCTION TO COMPUTE LEARNING STYLE
                     computeLearningStyle();
                     Toast.makeText(QuestionnaireScrollingActivity.this, "Learning style is:\n" + learning_style[0] + "\n" + learning_style[1] + "\n" + learning_style[2] + "\n" + learning_style[3] , Toast.LENGTH_LONG).show();
+                    Intent mNextIntent = new Intent(getApplicationContext(), DisplayLearningStyleActivity.class);
+                    startActivity(mNextIntent);
                     //hideProgressDialog();
                 }
             }

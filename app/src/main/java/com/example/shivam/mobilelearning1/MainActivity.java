@@ -17,12 +17,13 @@ public class MainActivity extends AppCompatActivity {
     DisplayLearningStyleActivity
     Dashboard
     */
-
+    Button proceedToLogin;
     Button proceedButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         proceedButton = (Button) findViewById(R.id.proceed_to_login_button);
         final Intent proceedToLoginIntent = new Intent(this, QuestionnaireScrollingActivity.class);
         proceedButton.setOnClickListener(new View.OnClickListener() {
@@ -31,5 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(proceedToLoginIntent);
             }
         });
+
+        proceedToLogin = (Button) findViewById(R.id.proceed_to_login_button);
     }
 }

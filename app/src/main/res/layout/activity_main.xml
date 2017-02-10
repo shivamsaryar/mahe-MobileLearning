@@ -10,16 +10,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.shivam.mobilelearning1.MainActivity">
 
-    <TextView
+    <Button
+        android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@+id/proceed_to_login_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:id="@+id/proceedToLoginButton" />
 
     <Button
         android:text="Proceed to Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:id="@+id/proceed_to_login_button"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/proceed_to_login_button" />
+        android:layout_marginTop="108dp" />
 </RelativeLayout>

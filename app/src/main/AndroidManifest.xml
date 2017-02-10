@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".EmailPasswordActivity" />
-        <activity android:name=".Google2LoginActivity" />
         <activity
             android:name=".QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
