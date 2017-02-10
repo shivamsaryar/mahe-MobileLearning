@@ -20,7 +20,8 @@
             android:name=".QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DisplayLearningStyleActivity"></activity>
+        <activity android:name=".DisplayLearningStyleActivity" />
+        <activity android:name=".GoogleSignInActivity"></activity>
     </application>
 
 </manifest>
