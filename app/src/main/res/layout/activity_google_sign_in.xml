@@ -10,4 +10,38 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.shivam.mobilelearning1.GoogleSignInActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:id="@+id/sign_in_button">
+        </com.google.android.gms.common.SignInButton>
+
+        <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sign_out_button" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/status_text_view"
+            android:layout_marginTop="50dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+
+
+    </LinearLayout>
 </RelativeLayout>
