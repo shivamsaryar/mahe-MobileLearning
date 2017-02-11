@@ -897,9 +897,13 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //START for simulation, delete later
                 for(int i =0; i<44; i++){
                     final_result[i] = 1;
                 }
+                //END for simulation
+
                 if(Arrays.asList(final_result).contains(0)){
                     Toast.makeText(QuestionnaireScrollingActivity.this, "All questions are mandatory.", Toast.LENGTH_SHORT).show();
                 }
