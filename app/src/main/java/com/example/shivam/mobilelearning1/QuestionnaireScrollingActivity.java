@@ -12,6 +12,8 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import static android.R.attr.checkedButton;
 import static android.R.attr.onClick;
@@ -158,6 +160,7 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
     Integer[] final_result;
 
     String[] learning_style;
+    ArrayList<String> user_learning_style;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,8 +176,7 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         }
 
         learning_style = new String[4];
-
-
+        user_learning_style = new ArrayList<String>();
 
         //INITIALIZE RADIO BUTTONS FOR OPTION 'A'
         ans1a = (RadioButton) findViewById(R.id.ans1a_radioButton);
@@ -904,6 +906,7 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
                     computeLearningStyle();
                     Toast.makeText(QuestionnaireScrollingActivity.this, "Learning style is:\n" + learning_style[0] + "\n" + learning_style[1] + "\n" + learning_style[2] + "\n" + learning_style[3] , Toast.LENGTH_LONG).show();
                     Intent mNextIntent = new Intent(getApplicationContext(), DisplayLearningStyleActivity.class);
+                    mNextIntent.putStringArrayListExtra("UserLearningStyle", user_learning_style);
                     startActivity(mNextIntent);
                     //hideProgressDialog();
                 }
@@ -936,45 +939,57 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         //CHECK FOR ACTIVE-REFLECTIVE
         if(active_reflective > 3){
             learning_style[0] = "Active";
+            user_learning_style.add(0, "Active");
         }
         else if(active_reflective < -3){
             learning_style[0] = "Reflective";
+            user_learning_style.add(0, "Reflective");
         }
         else if(active_reflective <= 3 && active_reflective >=-3){
             learning_style[0] = "Active_Reflective_Balanced";
+            user_learning_style.add(0, "Active_Reflective_Balanced");
         }
 
         //CHECK FOR SENSING-INTUITIVE
         if(sensing_intuitive > 3){
             learning_style[1] = "Sensing";
+            user_learning_style.add(1, "Sensing");
         }
         else if(sensing_intuitive < -3){
             learning_style[1] = "Intuitive";
+            user_learning_style.add(1, "Intuitive");
         }
         else if(sensing_intuitive <= 3 && sensing_intuitive >= -3){
             learning_style[1] = "Sensing_Intuitive_Balanced";
+            user_learning_style.add(1, "Sensing_Intuitive_Balanced");
         }
 
         //CHECK FOR VISUAL-VERBAL
         if(visual_verbal > 3){
             learning_style[2] = "Visual";
+            user_learning_style.add(2, "Visual");
         }
         else if(visual_verbal < -3){
             learning_style[2] = "Verbal";
+            user_learning_style.add(2, "Verbal");
         }
         else if(visual_verbal <=3 && visual_verbal >= -3){
             learning_style[2] = "Visual_Verbal_Balanced";
+            user_learning_style.add(2, "Visual_Verbal_Balanced");
         }
 
         //CHECK FOR SEQUENTIAL-GLOBAL
         if(sequential_global > 3){
             learning_style[3] = "Sequential";
+            user_learning_style.add(3, "Sequential");
         }
         else if(sequential_global < -3){
             learning_style[3] = "Global";
+            user_learning_style.add(3, "Global");
         }
         else if(sequential_global <=3 && sequential_global >= -3){
             learning_style[3] = "Sequential_Global_Balanced";
+            user_learning_style.add("Sequential_Global_Balanced");
         }
 
     }
