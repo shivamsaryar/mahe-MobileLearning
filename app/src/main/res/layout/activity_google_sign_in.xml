@@ -23,13 +23,13 @@
         </com.google.android.gms.common.SignInButton>
 
         <Button
-            android:text="Button"
+            android:text="Sign Out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/sign_out_button" />
 
         <TextView
-            android:text="TextView"
+            android:text="SignIn Status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/status_text_view"
@@ -37,10 +37,19 @@
             android:textSize="20sp" />
 
         <TextView
-            android:text="TextView"
+            android:text="SignIn Details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" />
+            android:id="@+id/details_text_view"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:text="Disconnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/disconnect_button"
+            android:layout_marginTop="50dp" />
 
 
     </LinearLayout>
