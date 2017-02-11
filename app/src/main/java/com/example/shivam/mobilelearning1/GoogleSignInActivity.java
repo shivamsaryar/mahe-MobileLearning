@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -19,7 +20,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
-public class GoogleSignInActivity extends AppCompatActivity implements View.OnClickListener {
+public class GoogleSignInActivity extends BaseActivity implements
+        GoogleApiClient.OnConnectionFailedListener,
+        View.OnClickListener {
 
     GoogleApiClient mGoogleApiClient;
     SignInButton signInButton;
@@ -36,7 +39,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements View.OnCl
                 .requestEmail()
                 .build();
         mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this)
+                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -82,8 +85,12 @@ public class GoogleSignInActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    public void onConnectionFailed(ConnectionResult connectionResult){
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        // An unresolvable error has occurred and Google APIs (including Sign-In) will not
+        // be available.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
+        Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
 
     private void signOut() {
