@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     /*
     APPLICATION ACTIVITY SEQUENCE:
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     */
     Button proceedToGoogleSignIn;
     Button proceedToQuestionnaire;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,5 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mGoogleSignInIntent);
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

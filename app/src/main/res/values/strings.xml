@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MobileLearning1</string>
+    <string name="app_name">MobileLearning</string>
     <string name="title_activity_questionnaire1">Questionnaire1Activity</string>
     <string name="title_activity_questionnaire_list_view">QuestionnaireListViewActivity</string>
     <string name="title_activity_questionnaire_scrolling">QuestionnaireScrollingActivity</string>
