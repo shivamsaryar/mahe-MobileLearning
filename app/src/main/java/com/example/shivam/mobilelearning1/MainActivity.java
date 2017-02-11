@@ -34,5 +34,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         proceedToLogin = (Button) findViewById(R.id.proceed_to_login_button);
+        proceedToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent mGoogleSignInIntent = new Intent(getApplicationContext(), GoogleSignInActivity.class);
+                startActivity(mGoogleSignInIntent);
+            }
+        });
     }
 }
