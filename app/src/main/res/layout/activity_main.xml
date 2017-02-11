@@ -14,16 +14,16 @@
         android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/proceed_to_login_button"
+        android:layout_below="@+id/proceed_to_questionnaire_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:id="@+id/proceedToLoginButton" />
+        android:id="@+id/proceed_to_google_signin" />
 
     <Button
         android:text="Proceed to Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/proceed_to_login_button"
+        android:id="@+id/proceed_to_questionnaire_button"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp" />

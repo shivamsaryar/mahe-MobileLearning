@@ -17,24 +17,24 @@ public class MainActivity extends AppCompatActivity {
     DisplayLearningStyleActivity
     Dashboard
     */
-    Button proceedToLogin;
-    Button proceedButton;
+    Button proceedToGoogleSignIn;
+    Button proceedToQuestionnaire;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        proceedButton = (Button) findViewById(R.id.proceed_to_login_button);
-        final Intent proceedToLoginIntent = new Intent(this, QuestionnaireScrollingActivity.class);
-        proceedButton.setOnClickListener(new View.OnClickListener() {
+        proceedToQuestionnaire = (Button) findViewById(R.id.proceed_to_questionnaire_button);
+        final Intent proceedToQuestionnaireIntent = new Intent(this, QuestionnaireScrollingActivity.class);
+        proceedToQuestionnaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(proceedToLoginIntent);
+                startActivity(proceedToQuestionnaireIntent);
             }
         });
 
-        proceedToLogin = (Button) findViewById(R.id.proceed_to_login_button);
-        proceedToLogin.setOnClickListener(new View.OnClickListener() {
+        proceedToGoogleSignIn = (Button) findViewById(R.id.proceed_to_google_signin);
+        proceedToGoogleSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Intent mGoogleSignInIntent = new Intent(getApplicationContext(), GoogleSignInActivity.class);
