@@ -168,6 +168,7 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         setContentView(R.layout.activity_questionnaire_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Questionnaire");
 
         //INITIALIZE THE FINAL_RESULT INTEGER CLASS ARRAY
         final_result = new Integer[44];
@@ -896,17 +897,19 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for(int i =0; i<44; i++){
+                    final_result[i] = 1;
+                }
                 if(Arrays.asList(final_result).contains(0)){
-                    Toast.makeText(QuestionnaireScrollingActivity.this, "NOT SUCCESSFUL", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(QuestionnaireScrollingActivity.this, "All questions are mandatory.", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(QuestionnaireScrollingActivity.this, "SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                    showProgressDialog();
                     //CALL FUNCTION TO COMPUTE LEARNING STYLE
                     computeLearningStyle();
-                    Toast.makeText(QuestionnaireScrollingActivity.this, "Learning style is:\n" + learning_style[0] + "\n" + learning_style[1] + "\n" + learning_style[2] + "\n" + learning_style[3] , Toast.LENGTH_LONG).show();
                     Intent mNextIntent = new Intent(getApplicationContext(), DisplayLearningStyleActivity.class);
                     mNextIntent.putStringArrayListExtra("UserLearningStyle", user_learning_style);
+                    hideProgressDialog();
                     startActivity(mNextIntent);
                     //hideProgressDialog();
                 }
