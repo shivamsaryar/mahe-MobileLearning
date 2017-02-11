@@ -17,7 +17,8 @@
         android:layout_below="@+id/proceed_to_questionnaire_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:id="@+id/proceed_to_google_signin" />
+        android:id="@+id/proceed_to_google_signin"
+        android:elevation="12dp" />
 
     <Button
         android:text="Proceed to Login"

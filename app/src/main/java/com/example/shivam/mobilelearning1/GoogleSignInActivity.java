@@ -212,6 +212,7 @@ public class GoogleSignInActivity extends BaseActivity implements
         if (user != null) {
             statusTextView.setText("Email:" + user.getEmail());
             detailTextView.setText("User ID:" + user.getUid());
+            Toast.makeText(this, "Hello, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
 
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
