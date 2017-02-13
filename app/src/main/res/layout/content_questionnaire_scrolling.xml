@@ -1210,6 +1210,12 @@
                 android:layout_weight="1" />
         </RadioGroup>
 
+        <CheckBox
+            android:text="Skip questions for now (Testing)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/skip_checkBox" />
+
         <Button
             android:text="Submit"
             android:layout_width="match_parent"

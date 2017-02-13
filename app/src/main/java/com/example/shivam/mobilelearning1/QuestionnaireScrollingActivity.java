@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -25,6 +26,8 @@ import static android.R.attr.checkedButton;
 import static android.R.attr.onClick;
 
 public class QuestionnaireScrollingActivity extends BaseActivity{
+
+    CheckBox skipCheckBox;
 
     RadioButton ans1a;
     RadioButton ans2a;
@@ -174,6 +177,22 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle("Questionnaire");
+
+        //START FOR TESTING PURPOSES
+        skipCheckBox = (CheckBox) findViewById(R.id.skip_checkBox);
+        skipCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(skipCheckBox.isChecked()){
+                    //START for simulation, delete later
+                    for(int i =0; i<44; i++){
+                        final_result[i] = 1;
+                    }
+                    //END for simulation
+                }
+            }
+        });
+        //END FOR TESTING PURPOSES
 
         //INITIALIZE THE FINAL_RESULT INTEGER CLASS ARRAY
         final_result = new Integer[44];
@@ -902,13 +921,6 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //START for simulation, delete later
-                for(int i =0; i<44; i++){
-                    final_result[i] = 1;
-                }
-                //END for simulation
-
                 if(Arrays.asList(final_result).contains(0)){
                     Toast.makeText(QuestionnaireScrollingActivity.this, "All questions are mandatory.", Toast.LENGTH_SHORT).show();
                 }

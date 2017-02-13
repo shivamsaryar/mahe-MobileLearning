@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,10 +29,15 @@ public class DisplayLearningStyleActivity extends BaseActivity{
     String app_user_email;
     String app_user_id;
 
+    TextView textViewResult1;
+    TextView textViewResult2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_learning_style);
+        textViewResult1 = (TextView) findViewById(R.id.text_view_result_1);
+        textViewResult2 = (TextView) findViewById(R.id.text_view_result_2);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -40,6 +46,9 @@ public class DisplayLearningStyleActivity extends BaseActivity{
         questionnaireData = getIntent().getExtras();
         app_user_learning_style = questionnaireData.getStringArrayList("UserLearningStyle");
         //END GET BUNDLE DATA
+
+        //DISPLAY LEARNING STYLE TO THE USER
+        textViewResult2.setText(app_user_learning_style.get(0) + "\n" + app_user_learning_style.get(1) + "\n" + app_user_learning_style.get(2) + "\n" + app_user_learning_style.get(3));
 
         //[START get current Firebase User details]
         mAuth = FirebaseAuth.getInstance();

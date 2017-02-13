@@ -10,12 +10,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.shivam.mobilelearning1.DisplayLearningStyleActivity">
 
-    <Button
-        android:text="Update"
+    <TextView
+        android:text="You have successfully completed the questionnaire. Thank you for your patience. Based on your answers, we have determined your learning style to be as follows:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp"
-        android:id="@+id/update_button" />
+        android:layout_marginTop="106dp"
+        android:id="@+id/text_view_result_1" />
+
+    <TextView
+        android:text="Your result here"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_result_2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
