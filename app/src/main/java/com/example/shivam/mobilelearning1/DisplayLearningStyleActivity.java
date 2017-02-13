@@ -15,48 +15,31 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class DisplayLearningStyleActivity extends BaseActivity {
+public class DisplayLearningStyleActivity extends BaseActivity{
 
-    private static final String TAG = "DisplayLearningStyleActivity";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    Button updateButton;
     Bundle questionnaireData;
     ArrayList<String> app_user_learning_style;
 
-    String app_user_id = "99z2LbpqPeNWwucP9UAsnlw9ZtG3";
-    String app_user_name = "Shivam Saryar";
-    String app_user_email = "";
-    String user = "user_details";
-    String node_id = app_user_id;
-
-    //name the child nodes of 'user_details' node
-    String node_name = "name";
-    String node_learning_style_1 = "learning_style_1";
-    String node_learning_style_2 = "learning_style_2";
-    String node_learning_style_3 = "learning_style_3";
-    String node_learning_style_4 = "learning_style_4";
-
-    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference(); //Referring root_node
-    DatabaseReference mUserNodeRef = mRootRef.child(user); //Referring node 'user'
-
-    //DECLARE REFERENCES TO THE CHILDREN OF EACH USER
-    DatabaseReference mUserIdRef = mUserNodeRef.child(node_id);
-    DatabaseReference mUserName = mUserIdRef.child(node_name); //referring node 'name'
-    DatabaseReference mUserLearningStyle1 = mUserIdRef.child(node_learning_style_1);
-    DatabaseReference mUserLearningStyle2 = mUserIdRef.child(node_learning_style_2);
-    DatabaseReference mUserLearningStyle3 = mUserIdRef.child(node_learning_style_3);
-    DatabaseReference mUserLearningStyle4 = mUserIdRef.child(node_learning_style_4);
-    //[END declare references, now go to DEFINE REFERENCES inside onCreate]
+    DatabaseReference mRootRef;
+    String app_user_name;
+    String app_user_email;
+    String app_user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_learning_style);
+
+        mRootRef = FirebaseDatabase.getInstance().getReference();
+
+        //GET LEARNING STYLE DATA FROM BUNDLE
         app_user_learning_style = new ArrayList<String>();
         questionnaireData = getIntent().getExtras();
         app_user_learning_style = questionnaireData.getStringArrayList("UserLearningStyle");
+        //END GET BUNDLE DATA
 
         //[START get current Firebase User details]
         mAuth = FirebaseAuth.getInstance();
@@ -66,35 +49,30 @@ public class DisplayLearningStyleActivity extends BaseActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     app_user_name = user.getDisplayName().toString();
-                    app_user_id = user.getUid();
-                    app_user_email = user.getEmail();
-
+                    app_user_id = user.getUid().toString();
+                    app_user_email = user.getEmail().toString();
                 } else {
                     Toast.makeText(DisplayLearningStyleActivity.this, "Please Sign In to save this information.", Toast.LENGTH_SHORT).show();
                 }
-                // [START_EXCLUDE]
-                updateUI(user);
-                // [END_EXCLUDE]
+                pushDataToFirebase(user);
             }
         };
         // [END get current Firebase User details]
+    }
 
-        //[START DEFINE REFERENCES FOR THE NODES IN FIREBASE DATABASE]
-
-
-        //INITIALIZE THE VALUES TO BE PUSHED TO THE NODES
-        updateButton = (Button) findViewById(R.id.update_button);
-        updateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mUserNodeRef.setValue(app_user_id);
-                mUserName.setValue(app_user_name);
-                mUserLearningStyle1.setValue(app_user_learning_style.get(0));
-                mUserLearningStyle2.setValue(app_user_learning_style.get(1));
-                mUserLearningStyle3.setValue(app_user_learning_style.get(2));
-                mUserLearningStyle4.setValue(app_user_learning_style.get(3));
-            }
-        });
+    ////PUSH DATA TO FIREBASE DATABASE
+    public void pushDataToFirebase(FirebaseUser user) {
+        if(user != null){
+            mRootRef.child("users").child(app_user_id).child("name").setValue(app_user_name);
+            mRootRef.child("users").child(app_user_id).child("email").setValue(app_user_email);
+            mRootRef.child("users").child(app_user_id).child("learning_style_1").setValue(app_user_learning_style.get(0));
+            mRootRef.child("users").child(app_user_id).child("learning_style_2").setValue(app_user_learning_style.get(1));
+            mRootRef.child("users").child(app_user_id).child("learning_style_3").setValue(app_user_learning_style.get(2));
+            mRootRef.child("users").child(app_user_id).child("learning_style_4").setValue(app_user_learning_style.get(3));
+        }
+        else{
+            Toast.makeText(this, "Learning Style data not available. Sign in to view.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -102,9 +80,7 @@ public class DisplayLearningStyleActivity extends BaseActivity {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
-    // [END on_start_add_listener]
 
-    // [START on_stop_remove_listener]
     @Override
     public void onStop() {
         super.onStop();
@@ -112,19 +88,4 @@ public class DisplayLearningStyleActivity extends BaseActivity {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-
-    public void updateUI(FirebaseUser user) {
-        hideProgressDialog();
-        if (user != null) {
-            //statusTextView.setText("Email:" + user.getEmail());
-            //detailTextView.setText("User ID:" + user.getUid());
-            //Toast.makeText(this, "Hello, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
-
-        } else {
-            //statusTextView.setText("Signed Out");
-            //detailTextView.setText(null);
-            //Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 }

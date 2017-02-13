@@ -30,6 +30,8 @@ public class MainActivity extends BaseActivity{
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    public String curr_user_id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MainActivity extends BaseActivity{
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    curr_user_id = user.getUid().toString();
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -92,13 +95,8 @@ public class MainActivity extends BaseActivity{
     public void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
-            //statusTextView.setText("Email:" + user.getEmail());
-            //detailTextView.setText("User ID:" + user.getUid());
             Toast.makeText(this, "Hello, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
-
         } else {
-            //statusTextView.setText("Signed Out");
-            //detailTextView.setText(null);
             Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
         }
     }
