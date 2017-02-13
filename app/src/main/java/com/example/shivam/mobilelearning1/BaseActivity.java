@@ -13,12 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 public class BaseActivity extends AppCompatActivity {
-
-    private static final String TAG = "BaseActivity";
 
     @VisibleForTesting
     public ProgressDialog mProgressDialog;
@@ -26,8 +21,7 @@ public class BaseActivity extends AppCompatActivity {
     public void showProgressDialog() {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
-            //mProgressDialog.setMessage(getString(R.string.loading));
-            mProgressDialog.setMessage("Loading..");
+            mProgressDialog.setMessage("Please wait...");
             mProgressDialog.setIndeterminate(true);
         }
         mProgressDialog.show();

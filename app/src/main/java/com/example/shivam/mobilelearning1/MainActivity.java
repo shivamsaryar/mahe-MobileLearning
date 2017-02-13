@@ -100,5 +100,4 @@ public class MainActivity extends BaseActivity{
             Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
