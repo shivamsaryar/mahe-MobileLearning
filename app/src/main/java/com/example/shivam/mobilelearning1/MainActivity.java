@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity{
     Button proceedToGoogleSignIn;
     Button proceedToQuestionnaire;
 
-    private static final String TAG = "SignInActivity";
+    private static final String TAG = "MainActivity";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity{
         }
     }
 
-    private void updateUI(FirebaseUser user) {
+    public void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
             //statusTextView.setText("Email:" + user.getEmail());

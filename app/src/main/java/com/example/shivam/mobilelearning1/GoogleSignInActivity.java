@@ -207,7 +207,7 @@ public class GoogleSignInActivity extends BaseActivity implements
                 });
     }
 
-    private void updateUI(FirebaseUser user) {
+    public void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
             statusTextView.setText("Email:" + user.getEmail());

@@ -184,7 +184,7 @@ public class EmailPasswordActivity extends BaseActivity implements View.OnClickL
         updateUI(null);
     }
 
-    private void updateUI(FirebaseUser user) {
+    public void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
             //mStatusText.setText(getString(R.string.emailpassword_status_fmt, user.getEmail()));

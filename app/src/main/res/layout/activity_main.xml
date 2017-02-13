@@ -21,7 +21,7 @@
         android:elevation="12dp" />
 
     <Button
-        android:text="Proceed to Login"
+        android:text="Proceed to Questionnaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/proceed_to_questionnaire_button"
