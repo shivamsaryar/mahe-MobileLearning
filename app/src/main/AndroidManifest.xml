@@ -22,7 +22,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DisplayLearningStyleActivity" />
         <activity android:name=".GoogleSignInActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
