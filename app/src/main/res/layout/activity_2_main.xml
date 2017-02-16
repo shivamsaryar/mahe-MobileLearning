@@ -38,4 +38,12 @@
         android:layout_marginBottom="108dp"
         android:id="@+id/imageView_profile_pic"
         android:layout_width="100dp" />
+
+    <Button
+        android:text="Proceed to Dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_goToDashboard"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

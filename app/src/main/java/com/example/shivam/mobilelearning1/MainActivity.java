@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity{
     */
     Button proceedToGoogleSignIn;
     Button proceedToQuestionnaire;
+    Button proceedToDashboard;
     ImageView profilePic;
     private FirebaseAuth mAuth;
     private static final String TAG = "MainActivity";
@@ -48,11 +49,12 @@ public class MainActivity extends BaseActivity{
 
         profilePic = (ImageView) findViewById(R.id.imageView_profile_pic);
 
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser mUser = mAuth.getCurrentUser();
         if(mUser != null){
 
-            imgUri = Uri.parse(String.valueOf(mUser.getPhotoUrl()));
+            imgUri = Uri.parse(String.valueOf(mUser.getPhotoUrl().getPath()));
 
             /*
             InputStream image_stream = null;
@@ -87,6 +89,15 @@ public class MainActivity extends BaseActivity{
             public void onClick(View v) {
                 final Intent mGoogleSignInIntent = new Intent(getApplicationContext(), GoogleSignInActivity.class);
                 startActivity(mGoogleSignInIntent);
+            }
+        });
+
+        proceedToDashboard = (Button) findViewById(R.id.button_goToDashboard);
+        proceedToDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent dashboardIntent = new Intent(MainActivity.this, DashboardActivity.class);
+                startActivity(dashboardIntent);
             }
         });
     }
