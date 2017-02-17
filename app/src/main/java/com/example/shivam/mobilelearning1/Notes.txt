@@ -1,0 +1,2 @@
+1. Use Picasso for displaying image from a URL or Uri into ImageView
+    http://square.github.io/picasso/

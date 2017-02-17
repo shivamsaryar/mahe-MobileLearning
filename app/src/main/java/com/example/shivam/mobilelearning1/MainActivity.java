@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 import java.io.BufferedInputStream;
 import java.io.FileNotFoundException;
@@ -41,7 +42,6 @@ public class MainActivity extends BaseActivity{
     private static final String TAG = "MainActivity";
     Uri imgUri;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,25 +49,15 @@ public class MainActivity extends BaseActivity{
 
         profilePic = (ImageView) findViewById(R.id.imageView_profile_pic);
 
-
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser mUser = mAuth.getCurrentUser();
         if(mUser != null){
 
-            imgUri = Uri.parse(String.valueOf(mUser.getPhotoUrl().getPath()));
+            imgUri = mUser.getPhotoUrl();
+            Log.d(TAG, "Photo Uri: "+ mUser.getPhotoUrl().toString());
+            Picasso.with(getApplicationContext()).load(imgUri).resize(50,50).into(profilePic);
+            Log.d(TAG, "After Picasso load");
 
-            /*
-            InputStream image_stream = null;
-            try {
-                image_stream = getContentResolver().openInputStream(IMAGE_URI);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            Bitmap bitmap= BitmapFactory.decodeStream(image_stream );
-            profilePic.setImageBitmap(bitmap);
-            */
-            profilePic.setImageURI(null);
-            profilePic.setImageURI(imgUri);
         }
         else{
         }

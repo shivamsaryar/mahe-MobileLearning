@@ -31,13 +31,11 @@
         android:layout_marginTop="108dp" />
 
     <ImageView
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_focused"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="108dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView_profile_pic"
-        android:layout_width="100dp" />
+        android:layout_centerHorizontal="true"
+        />
 
     <Button
         android:text="Proceed to Dashboard"
@@ -46,4 +44,6 @@
         android:id="@+id/button_goToDashboard"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
