@@ -2,6 +2,7 @@ package com.example.shivam.mobilelearning1;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -15,13 +16,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, DashHomeFragment.OnFragmentInteractionListener {
 
     Toolbar toolbar = null;
     NavigationView navigationView = null;
+    View header;
     private static final String TAG = "DrawerActivity";
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    Boolean signedIn;
+    TextView user_name;
+    TextView user_email;
+    String name;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +44,6 @@ public class DashboardActivity extends AppCompatActivity
         setContentView(R.layout.activity_3_dashboard);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,14 +53,70 @@ public class DashboardActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        header=navigationView.getHeaderView(0);
 
-        //SET HOME FRAGMENT AS THE DEFAULT DRAWER FRAGMENT
+        user_name = (TextView)header.findViewById(R.id.textView_dash_username);
+        user_email = (TextView)header.findViewById(R.id.textView_dash_useremail);
+
+        //user_name.setText("shivam dash");
+        //user_email.setText("abc@hotmail.com");
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged: signed_in");
+                    signedIn = true;
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged: signed_out");
+                    signedIn = false;
+                }
+                // [START_EXCLUDE]
+                update_nav_drawer(user);
+                // [END_EXCLUDE]
+            }
+        };
+
+        //[START - SET HOME FRAGMENT AS THE DEFAULT DRAWER FRAGMENT]
         DashHomeFragment dashHomeFrag = new DashHomeFragment();
         dashHomeFrag.setArguments(null);
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, dashHomeFrag);
         fragmentTransaction.commit();
+        //[END Set home fragment as default fragment]
+    }
+
+    //Update the navigation drawer
+    private void update_nav_drawer(FirebaseUser user) {
+        if(signedIn == true){
+            user_name.setText(user.getDisplayName());
+            user_email.setText(user.getEmail());
+        }
+        else{
+            user_name.setText("Guest user");
+            user_email.setText("Guest email");
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+    // [END on_start_add_listener]
+
+    // [START on_stop_remove_listener]
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
     @Override
