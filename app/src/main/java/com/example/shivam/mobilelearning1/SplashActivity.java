@@ -29,12 +29,12 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    Log.d(TAG, "onAuthStateChanged: signed_in with id: " + user.getUid());
                     signedIn = true;
                     //curr_user_id = user.getUid().toString();
                 } else {
                     // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                    Log.d(TAG, "onAuthStateChanged: signed_out");
                     signedIn = false;
                 }
                 // [START_EXCLUDE]

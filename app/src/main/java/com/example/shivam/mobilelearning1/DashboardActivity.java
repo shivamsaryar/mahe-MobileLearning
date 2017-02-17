@@ -16,10 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -35,6 +37,8 @@ public class DashboardActivity extends AppCompatActivity
     Boolean signedIn;
     TextView user_name;
     TextView user_email;
+    ImageView user_profile_pic;
+    Uri imgUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class DashboardActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         header=navigationView.getHeaderView(0);
 
+        user_profile_pic = (ImageView)header.findViewById(R.id.imageView_profile_pic);
         user_name = (TextView)header.findViewById(R.id.textView_dash_username);
         user_email = (TextView)header.findViewById(R.id.textView_dash_useremail);
 
@@ -61,10 +66,12 @@ public class DashboardActivity extends AppCompatActivity
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged: signed_in");
                     signedIn = true;
+                    imgUri = user.getPhotoUrl();
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged: signed_out");
@@ -84,11 +91,15 @@ public class DashboardActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.fragment_container, dashHomeFrag);
         fragmentTransaction.commit();
         //[END Set home fragment as default fragment]
+
+        //Picasso.with(this).load(imgUri).into(user_profile_pic);
+
     }
 
     //Update the navigation drawer
     private void update_nav_drawer(FirebaseUser user) {
         if(signedIn == true){
+            Picasso.with(getApplicationContext()).load(imgUri).into(user_profile_pic);
             user_name.setText(user.getDisplayName());
             user_email.setText(user.getEmail());
         }
