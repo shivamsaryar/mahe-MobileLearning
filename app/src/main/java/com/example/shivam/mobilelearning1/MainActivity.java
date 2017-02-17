@@ -68,8 +68,6 @@ public class MainActivity extends BaseActivity{
             */
             profilePic.setImageURI(null);
             profilePic.setImageURI(imgUri);
-
-
         }
         else{
         }

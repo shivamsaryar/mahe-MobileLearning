@@ -35,8 +35,6 @@ public class DashboardActivity extends AppCompatActivity
     Boolean signedIn;
     TextView user_name;
     TextView user_email;
-    String name;
-    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +55,6 @@ public class DashboardActivity extends AppCompatActivity
 
         user_name = (TextView)header.findViewById(R.id.textView_dash_username);
         user_email = (TextView)header.findViewById(R.id.textView_dash_useremail);
-
-        //user_name.setText("shivam dash");
-        //user_email.setText("abc@hotmail.com");
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -166,7 +161,8 @@ public class DashboardActivity extends AppCompatActivity
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, dashHomeFrag);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_gallery) {
+        }
+        else if (id == R.id.nav_gallery) {
             Log.d(TAG, "Galery option clicked");
 
         } else if (id == R.id.nav_slideshow) {
