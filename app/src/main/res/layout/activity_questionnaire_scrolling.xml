@@ -19,9 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
+            app:contentScrim="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            tools:background="@mipmap/ultimate_material_lollipop_collection">
+            android:background="@drawable/android_red_black_abstract_material_design">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
