@@ -66,6 +66,7 @@ public class GoogleSignInActivity extends BaseActivity implements
         // [START config_signIn]
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                //request Id Token retrieved from Firebase console web key
                 .requestIdToken("1020762197958-ua8dvofk8d5ium6jfvlbbf1df1sd9vbp.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
@@ -98,7 +99,6 @@ public class GoogleSignInActivity extends BaseActivity implements
             }
         };
         // [END auth_state_listener]
-
     }
 
     // [START on_start_add_listener]
@@ -107,7 +107,6 @@ public class GoogleSignInActivity extends BaseActivity implements
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
-    // [END on_start_add_listener]
 
     // [START on_stop_remove_listener]
     @Override
@@ -117,7 +116,6 @@ public class GoogleSignInActivity extends BaseActivity implements
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-    // [END on_stop_remove_listener]
 
     // [START onActivityResult]
     @Override
@@ -161,7 +159,10 @@ public class GoogleSignInActivity extends BaseActivity implements
                             Toast.makeText(GoogleSignInActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
-
+                        else{
+                            Intent dashIntent = new Intent(getApplicationContext(), QuestionnaireScrollingActivity.class);
+                            startActivity(dashIntent);
+                        }
                         // [START_EXCLUDE]
                         hideProgressDialog();
                         // [END_EXCLUDE]
@@ -181,7 +182,6 @@ public class GoogleSignInActivity extends BaseActivity implements
     private void signOut() {
         // Firebase sign out
         mAuth.signOut();
-
         // Google sign out
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
                 new ResultCallback<Status>() {
@@ -193,7 +193,7 @@ public class GoogleSignInActivity extends BaseActivity implements
     }
     // [END signOut]
 
-
+/*
     private void revokeAccess() {
         // Firebase sign out
         mAuth.signOut();
@@ -206,22 +206,19 @@ public class GoogleSignInActivity extends BaseActivity implements
                     }
                 });
     }
-
+*/
     public void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
             statusTextView.setText("Email:" + user.getEmail());
             detailTextView.setText("User ID:" + user.getUid());
             Toast.makeText(this, "Hello, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
-
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+
         } else {
             statusTextView.setText("Signed Out");
             detailTextView.setText(null);
-
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
         }
     }
 
@@ -240,8 +237,6 @@ public class GoogleSignInActivity extends BaseActivity implements
             signIn();
         } else if (i == R.id.sign_out_button) {
             signOut();
-        } else if (i == R.id.disconnect_button) {
-            revokeAccess();
         }
     }
 

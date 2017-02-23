@@ -57,7 +57,7 @@ public class DashboardActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         header=navigationView.getHeaderView(0);
 
-        user_profile_pic = (ImageView)header.findViewById(R.id.imageView_profile_pic);
+        user_profile_pic = (ImageView)header.findViewById(R.id.profile_image);
         user_name = (TextView)header.findViewById(R.id.textView_dash_username);
         user_email = (TextView)header.findViewById(R.id.textView_dash_useremail);
 
@@ -126,6 +126,12 @@ public class DashboardActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        this.getSupportActionBar().setTitle("Home");
+    }
+
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -171,10 +177,12 @@ public class DashboardActivity extends AppCompatActivity
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, dashHomeFrag);
+            toolbar.setTitle("Home");
             fragmentTransaction.commit();
         }
         else if (id == R.id.nav_gallery) {
             Log.d(TAG, "Galery option clicked");
+            toolbar.setTitle("Gallery");
 
         } else if (id == R.id.nav_slideshow) {
 
