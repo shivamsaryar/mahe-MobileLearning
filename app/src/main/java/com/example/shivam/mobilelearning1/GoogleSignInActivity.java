@@ -160,8 +160,8 @@ public class GoogleSignInActivity extends BaseActivity implements
                                     Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Intent dashIntent = new Intent(getApplicationContext(), QuestionnaireScrollingActivity.class);
-                            startActivity(dashIntent);
+                            Intent questionnaireIntent = new Intent(getApplicationContext(), QuestionnaireScrollingActivity.class);
+                            startActivity(questionnaireIntent);
                         }
                         // [START_EXCLUDE]
                         hideProgressDialog();

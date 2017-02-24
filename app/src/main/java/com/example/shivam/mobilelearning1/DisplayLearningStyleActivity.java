@@ -1,5 +1,6 @@
 package com.example.shivam.mobilelearning1;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class DisplayLearningStyleActivity extends BaseActivity{
 
     TextView textViewResult1;
     TextView textViewResult2;
+    Button toDashboardButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,14 @@ public class DisplayLearningStyleActivity extends BaseActivity{
         setContentView(R.layout.activity_display_learning_style);
         textViewResult1 = (TextView) findViewById(R.id.text_view_result_1);
         textViewResult2 = (TextView) findViewById(R.id.text_view_result_2);
+        toDashboardButton = (Button) findViewById(R.id.button_to_dashboard);
+        toDashboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toDashIntent = new Intent(getApplicationContext(), DashboardActivity.class);
+                startActivity(toDashIntent);
+            }
+        });
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
