@@ -2,7 +2,6 @@ package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,7 +48,7 @@ public class GoogleSignInActivity extends BaseActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_google_sign_in);
+        setContentView(R.layout.activity_3_google_sign_in);
 
         //Views
         statusTextView = (TextView) findViewById(R.id.status_text_view);

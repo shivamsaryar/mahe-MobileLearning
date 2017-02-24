@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.shivam.mobilelearning1.QuestionnaireScrollingActivity"
-    tools:showIn="@layout/activity_questionnaire_scrolling">
+    tools:showIn="@layout/activity_4_questionnaire_scrolling">
 
     <LinearLayout
         android:orientation="vertical"
