@@ -1,5 +1,6 @@
 package com.example.shivam.mobilelearning1;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,7 +28,7 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 public class DashboardActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, DashHomeFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, DashHomeFragment.OnFragmentInteractionListener, DashProfileFragment.OnFragmentInteractionListener {
 
     Toolbar toolbar = null;
     NavigationView navigationView = null;
@@ -134,7 +136,12 @@ public class DashboardActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+
+            //On pressing the back button, the application exits
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 
@@ -180,6 +187,12 @@ public class DashboardActivity extends AppCompatActivity
         else if (id == R.id.nav_profile) {
             Log.d(TAG, "Profile option clicked");
             toolbar.setTitle("Profile");
+            DashProfileFragment dashProfileFrag = new DashProfileFragment();
+            dashProfileFrag.setArguments(null);
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, dashProfileFrag);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_slideshow) {
 

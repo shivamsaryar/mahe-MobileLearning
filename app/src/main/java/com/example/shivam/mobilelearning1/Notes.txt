@@ -2,3 +2,10 @@
     http://square.github.io/picasso/
 2. Circle image view for navigation drawer
     https://github.com/hdodenhof/CircleImageView
+3. In case of multiple fragments, the main drawer activity should implement OnFragmentInteractionListener of all the fragments,
+   as shown below:
+
+    public class DashboardActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener,
+        DashHomeFragment.OnFragmentInteractionListener,
+        DashProfileFragment.OnFragmentInteractionListener {..}
