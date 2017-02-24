@@ -91,9 +91,6 @@ public class DashboardActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.fragment_container, dashHomeFrag);
         fragmentTransaction.commit();
         //[END Set home fragment as default fragment]
-
-        //Picasso.with(this).load(imgUri).into(user_profile_pic);
-
     }
 
     //Update the navigation drawer
@@ -172,12 +169,12 @@ public class DashboardActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
             Log.d(TAG, "Camera option clicked");
+            toolbar.setTitle("Home");
             DashHomeFragment dashHomeFrag = new DashHomeFragment();
             dashHomeFrag.setArguments(null);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, dashHomeFrag);
-            toolbar.setTitle("Home");
             fragmentTransaction.commit();
         }
         else if (id == R.id.nav_profile) {
