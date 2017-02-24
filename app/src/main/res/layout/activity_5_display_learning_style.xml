@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Proceed to Dashboard"
+        android:text="@string/proceed_to_dashboard_button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

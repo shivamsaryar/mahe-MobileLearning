@@ -12,7 +12,7 @@
     tools:context="com.example.shivam.mobilelearning1.MainActivity">
 
     <Button
-        android:text="Sign In With Google"
+        android:text="@string/sign_in_with_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/proceed_to_questionnaire_button"
@@ -22,7 +22,7 @@
         android:elevation="12dp" />
 
     <Button
-        android:text="Proceed to Questionnaire"
+        android:text="@string/proceed_to_questionnaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/proceed_to_questionnaire_button"
@@ -30,15 +30,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView_profile_pic"
-        android:layout_centerHorizontal="true"
-        />
-
     <Button
-        android:text="Proceed to Dashboard"
+        android:text="@string/proceed_to_dashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_goToDashboard"

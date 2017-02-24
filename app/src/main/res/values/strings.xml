@@ -105,4 +105,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="guest_user">Guest User</string>
+    <string name="user_email_provider_com">user_email@provider.com</string>
+    <string name="proceed_to_dashboard">Proceed to Dashboard</string>
+    <string name="proceed_to_questionnaire">Proceed to Questionnaire</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="proceed_to_dashboard_button_text">Proceed to Dashboard</string>
 </resources>
