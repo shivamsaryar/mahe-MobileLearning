@@ -169,7 +169,7 @@ public class DashboardActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
             Log.d(TAG, "Camera option clicked");
             DashHomeFragment dashHomeFrag = new DashHomeFragment();
@@ -180,9 +180,9 @@ public class DashboardActivity extends AppCompatActivity
             toolbar.setTitle("Home");
             fragmentTransaction.commit();
         }
-        else if (id == R.id.nav_gallery) {
-            Log.d(TAG, "Galery option clicked");
-            toolbar.setTitle("Gallery");
+        else if (id == R.id.nav_profile) {
+            Log.d(TAG, "Profile option clicked");
+            toolbar.setTitle("Profile");
 
         } else if (id == R.id.nav_slideshow) {
 

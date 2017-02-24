@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "1020762197958-ndvrguqoornqqqsg5c7olshakqm4hl6q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shivam.mobilelearning1",
+            "certificate_hash": "9c01dd8f48a626eaa3678a51ba4d82f18e41f8d0"
+          }
+        },
+        {
+          "client_id": "1020762197958-5rk6b1n7i3hp474f60qf24pdss6lcqab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shivam.mobilelearning1",
+            "certificate_hash": "c750d1405dec6cecae333954926f599fee931fc2"
+          }
+        },
+        {
           "client_id": "1020762197958-ua8dvofk8d5ium6jfvlbbf1df1sd9vbp.apps.googleusercontent.com",
           "client_type": 3
         }
