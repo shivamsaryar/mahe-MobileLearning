@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    private static final String MyTAG = "Shivam's Log";
+    private static final String MyTAG = "ShivamLog";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Boolean signedIn;
@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_splash);
-        Log.d(MyTAG, "onCreate()");
+        Log.i(MyTAG, "onCreate()");
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -54,12 +54,6 @@ public class SplashActivity extends AppCompatActivity {
         */
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(MyTAG, "onResume()");
-    }
-
     private void proceed(Boolean signedIn) {
         if(signedIn == true){
             Intent dashboardIntent = new Intent(SplashActivity.this, MainActivity.class);
@@ -76,14 +70,26 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
+        Log.i(MyTAG, "onStart");
         mAuth.addAuthStateListener(mAuthListener);
     }
-    // [END on_start_add_listener]
 
-    // [START on_stop_remove_listener]
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(MyTAG, "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(MyTAG, "onResume()");
+    }
+
     @Override
     public void onStop() {
         super.onStop();
+        Log.i(MyTAG, "onStop");
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }

@@ -22,7 +22,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 public class DashboardActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, DashHomeFragment.OnFragmentInteractionListener, DashProfileFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        DashHomeFragment.OnFragmentInteractionListener,
+        DashProfileFragment.OnFragmentInteractionListener {
 
     Toolbar toolbar = null;
     NavigationView navigationView = null;
