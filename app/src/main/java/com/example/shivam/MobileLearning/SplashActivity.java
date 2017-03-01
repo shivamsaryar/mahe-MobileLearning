@@ -38,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
                     Log.d(TAG, "onAuthStateChanged: signed_out");
                     signedIn = false;
                 }
-                //proceed(signedIn);
+                proceed(signedIn);
             }
         };
         /*
@@ -93,5 +93,17 @@ public class SplashActivity extends AppCompatActivity {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(MyTAG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(MyTAG, "onDestroy");
     }
 }
