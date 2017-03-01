@@ -9,3 +9,5 @@
         implements NavigationView.OnNavigationItemSelectedListener,
         DashHomeFragment.OnFragmentInteractionListener,
         DashProfileFragment.OnFragmentInteractionListener {..}
+4. GitHub
+    root folder of project has the .git folder. In that, open the config file to find properties and change appropriately
