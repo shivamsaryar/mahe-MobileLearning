@@ -21,7 +21,6 @@ public class MainActivity extends BaseActivity{
     DisplayLearningStyleActivity
     Dashboard
     */
-
     Button proceedToGoogleSignIn;
     Button proceedToQuestionnaire;
     Button proceedToDashboard;
