@@ -39,6 +39,7 @@ public class SplashActivity extends AppCompatActivity {
                     signedIn = false;
                 }
                 proceed(signedIn);
+
             }
         };
         /*
