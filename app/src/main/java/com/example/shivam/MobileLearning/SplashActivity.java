@@ -14,6 +14,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String MyTAG = "ShivamLog";
+
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Boolean signedIn;
