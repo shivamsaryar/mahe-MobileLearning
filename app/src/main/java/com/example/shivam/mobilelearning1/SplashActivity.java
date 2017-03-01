@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    private static final String MyTAG = "Shivam's Log";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Boolean signedIn;
@@ -22,6 +23,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_splash);
+        Log.d(MyTAG, "onCreate()");
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -32,18 +34,14 @@ public class SplashActivity extends AppCompatActivity {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged: signed_in with id: " + user.getUid());
                     signedIn = true;
-                    //curr_user_id = user.getUid().toString();
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged: signed_out");
                     signedIn = false;
                 }
-                // [START_EXCLUDE]
-                proceed(signedIn);
-                // [END_EXCLUDE]
+                //proceed(signedIn);
             }
         };
-
         /*
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser mUser = mAuth.getCurrentUser();
@@ -55,6 +53,12 @@ public class SplashActivity extends AppCompatActivity {
         }
         proceed(signedIn);
         */
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(MyTAG, "onResume()");
     }
 
     private void proceed(Boolean signedIn) {

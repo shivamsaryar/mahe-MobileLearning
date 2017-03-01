@@ -47,8 +47,6 @@ public class MainActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2_main);
 
-        profilePic = (ImageView) findViewById(R.id.imageView_profile_pic);
-
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser mUser = mAuth.getCurrentUser();
         if(mUser != null){
