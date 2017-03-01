@@ -1,4 +1,4 @@
-package com.example.shivam.mobilelearning1;
+package com.example.shivam.MobileLearning;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,12 +12,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link DashProfileFragment.OnFragmentInteractionListener} interface
+ * {@link DashHomeFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link DashProfileFragment#newInstance} factory method to
+ * Use the {@link DashHomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DashProfileFragment extends Fragment {
+public class DashHomeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +29,7 @@ public class DashProfileFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public DashProfileFragment() {
+    public DashHomeFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +39,11 @@ public class DashProfileFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DashProfileFragment.
+     * @return A new instance of fragment DashHomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DashProfileFragment newInstance(String param1, String param2) {
-        DashProfileFragment fragment = new DashProfileFragment();
+    public static DashHomeFragment newInstance(String param1, String param2) {
+        DashHomeFragment fragment = new DashHomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +64,7 @@ public class DashProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2_dash_profile, container, false);
+        return inflater.inflate(R.layout.fragment_1_dash_home, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

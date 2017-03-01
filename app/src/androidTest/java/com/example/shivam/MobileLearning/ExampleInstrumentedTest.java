@@ -1,4 +1,4 @@
-package com.example.shivam.mobilelearning1;
+package com.example.shivam.MobileLearning;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

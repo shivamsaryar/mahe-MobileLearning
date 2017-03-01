@@ -1,18 +1,12 @@
-package com.example.shivam.mobilelearning1;
+package com.example.shivam.MobileLearning;
 
 /**
  * Created by Shivam on 05-02-2017.
  */
 
 import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.NotificationCompat;
-import android.util.Log;
-import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
 
