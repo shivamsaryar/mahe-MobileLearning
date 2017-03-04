@@ -16,26 +16,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.shivam.MobileLearning.SplashActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.shivam.MobileLearning.EmailPasswordActivity" />
+        <activity android:name=".EmailPasswordActivity" />
         <activity
-            android:name="com.example.shivam.MobileLearning.QuestionnaireScrollingActivity"
+            android:name=".QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.shivam.MobileLearning.DisplayLearningStyleActivity" />
-        <activity android:name="com.example.shivam.MobileLearning.GoogleSignInActivity" />
-        <activity android:name="com.example.shivam.MobileLearning.MainActivity" />
+        <activity android:name=".DisplayLearningStyleActivity" />
+        <activity android:name=".GoogleSignInActivity" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name="com.example.shivam.MobileLearning.DashboardActivity"
+            android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.shivam.MobileLearning.FirebaseStorageActivity" />
-        <activity android:name="com.example.shivam.MobileLearning.PandaChatActivity"></activity>
+        <activity android:name=".FirebaseStorageActivity" />
+        <activity android:name=".PandaChatActivity" />
+        <activity android:name=".StorageActivity"></activity>
     </application>
 
 </manifest>

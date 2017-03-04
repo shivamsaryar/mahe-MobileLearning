@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.shivam.MobileLearning.DashProfileFragment">
 
     <RelativeLayout
@@ -27,5 +28,15 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="78dp"
             android:id="@+id/button2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_guest_user"
+            app:civ_border_width="0dp"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp" />
     </RelativeLayout>
 </FrameLayout>

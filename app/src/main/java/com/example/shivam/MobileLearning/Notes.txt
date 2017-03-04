@@ -11,3 +11,6 @@
         DashProfileFragment.OnFragmentInteractionListener {..}
 4. GitHub
     root folder of project has the .git folder. In that, open the config file to find properties and change appropriately.
+
+5. Android Asset Studio for icons
+    https://romannurik.github.io/AndroidAssetStudio
