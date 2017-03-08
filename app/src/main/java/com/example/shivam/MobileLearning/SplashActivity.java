@@ -57,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void proceed(Boolean signedIn) {
         if(signedIn == true){
-            Intent dashboardIntent = new Intent(SplashActivity.this, MainActivity.class);
+            Intent dashboardIntent = new Intent(SplashActivity.this, DashboardActivity.class);
             Toast.makeText(this, "Splash - User signed in", Toast.LENGTH_SHORT).show();
             startActivity(dashboardIntent);
         }

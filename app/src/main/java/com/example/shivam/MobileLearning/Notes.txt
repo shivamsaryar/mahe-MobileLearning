@@ -14,3 +14,6 @@
 
 5. Android Asset Studio for icons
     https://romannurik.github.io/AndroidAssetStudio
+
+6. Adding drawable icons:
+    batch drawable import
