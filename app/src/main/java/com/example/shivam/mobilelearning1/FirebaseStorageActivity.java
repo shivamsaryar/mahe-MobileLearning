@@ -1,4 +1,4 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

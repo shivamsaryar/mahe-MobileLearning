@@ -1,4 +1,4 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import android.support.annotation.NonNull;
 import android.os.Bundle;

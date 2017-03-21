@@ -11,25 +11,12 @@
             android:icon="@drawable/ic_guest_user"
             android:title="Profile" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_recommended"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Recommended" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
+            android:id="@+id/nav_discover"
+            android:icon="@drawable/earth_icon"
             android:title="Discover" />
     </group>
-
-    <item android:title="App">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 </menu>

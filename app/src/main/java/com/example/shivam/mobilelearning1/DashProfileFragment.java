@@ -1,13 +1,23 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +27,7 @@ import android.view.ViewGroup;
  * Use the {@link DashProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class DashProfileFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +37,13 @@ public class DashProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ImageView user_prof_image;
+    private TextView user_prof_name;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private Uri user_img_uri;
+    private View myInflaterView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -60,10 +78,20 @@ public class DashProfileFragment extends Fragment {
         }
     }
 
+    private void update_user_deails(FirebaseUser user) {
+        user_img_uri = user.getPhotoUrl();
+        Picasso.with(getContext()).load(user_img_uri).into(user_prof_image);
+        user_prof_name.setText(user.getDisplayName());
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        myInflaterView = inflater.inflate(R.layout.fragment_2_dash_profile,container,false);
+        user_prof_image = (ImageView)myInflaterView.findViewById(R.id.profile_image);
+        user_prof_name = (TextView)myInflaterView.findViewById(R.id.tv_user_prof_name);
+        user_prof_name.setText("yellow");
         return inflater.inflate(R.layout.fragment_2_dash_profile, container, false);
     }
 

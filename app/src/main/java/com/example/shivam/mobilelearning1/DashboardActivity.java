@@ -1,4 +1,4 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
@@ -36,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity
     TextView user_name;
     TextView user_email;
     ImageView user_profile_pic;
-    Uri imgUri;
+    public Uri imgUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,14 +189,12 @@ public class DashboardActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, dashProfileFrag);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_recommended) {
+            Log.d(TAG, "Recommended option clicked");
+            toolbar.setTitle("Recommendations for you");
+        } else if (id == R.id.nav_discover) {
+            Log.d(TAG, "Discover option clicked");
+            toolbar.setTitle("Discover");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

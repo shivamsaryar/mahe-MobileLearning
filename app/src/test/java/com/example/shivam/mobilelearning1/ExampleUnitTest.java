@@ -1,4 +1,4 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import org.junit.Test;
 

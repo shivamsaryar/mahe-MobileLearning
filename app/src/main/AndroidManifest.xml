@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.shivam.MobileLearning">
+    package="com.example.shivam.mobilelearning1">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,28 +16,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.example.shivam.mobilelearning1.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmailPasswordActivity" />
+        <activity android:name="com.example.shivam.mobilelearning1.EmailPasswordActivity" />
         <activity
-            android:name=".QuestionnaireScrollingActivity"
+            android:name="com.example.shivam.mobilelearning1.QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DisplayLearningStyleActivity" />
-        <activity android:name=".GoogleSignInActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.example.shivam.mobilelearning1.DisplayLearningStyleActivity" />
+        <activity android:name="com.example.shivam.mobilelearning1.GoogleSignInActivity" />
+        <activity android:name="com.example.shivam.mobilelearning1.MainActivity" />
         <activity
-            android:name=".DashboardActivity"
+            android:name="com.example.shivam.mobilelearning1.DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FirebaseStorageActivity" />
-        <activity android:name=".PandaChatActivity" />
-        <activity android:name=".StorageActivity"></activity>
+        <activity android:name="com.example.shivam.mobilelearning1.FirebaseStorageActivity" />
+        <activity android:name="com.example.shivam.mobilelearning1.PandaChatActivity" />
+        <activity android:name="com.example.shivam.mobilelearning1.StorageActivity"></activity>
     </application>
 
 </manifest>

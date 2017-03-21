@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.shivam.MobileLearning.PandaChatActivity">
+    tools:context="com.example.shivam.mobilelearning1.PandaChatActivity">
 
     <ListView
         android:layout_width="match_parent"
