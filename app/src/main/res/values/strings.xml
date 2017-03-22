@@ -111,4 +111,5 @@
     <string name="proceed_to_questionnaire">Proceed to Questionnaire</string>
     <string name="sign_in_with_google">Sign In With Google</string>
     <string name="proceed_to_dashboard_button_text">Proceed to Dashboard</string>
+    <string name="name">Name</string>
 </resources>
