@@ -11,19 +11,20 @@
         android:layout_height="65dp"
         android:src="@drawable/ic_guest_user"
         app:civ_border_width="0dp"
+        android:layout_marginTop="88dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="129dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/tv_user_prof_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:text="Name"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:layout_below="@+id/user_profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
 
 </RelativeLayout>
