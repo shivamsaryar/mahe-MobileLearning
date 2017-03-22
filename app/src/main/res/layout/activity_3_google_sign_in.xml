@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        tools:ignore="UselessParent">
 
         <com.google.android.gms.common.SignInButton
             android:layout_width="match_parent"
@@ -25,13 +26,13 @@
         </com.google.android.gms.common.SignInButton>
 
         <Button
-            android:text="Sign Out"
+            android:text="@string/sign_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/sign_out_button" />
 
         <TextView
-            android:text="SignIn Status"
+            android:text="@string/signin_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/status_text_view"
@@ -39,7 +40,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:text="SignIn Details"
+            android:text="@string/signin_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/details_text_view"
