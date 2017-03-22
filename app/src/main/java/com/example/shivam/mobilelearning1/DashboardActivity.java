@@ -170,7 +170,7 @@ public class DashboardActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-            Log.d(TAG, "Camera option clicked");
+            Log.d(TAG, "Dashboard Home option clicked");
             toolbar.setTitle("Home");
             DashHomeFragment dashHomeFrag = new DashHomeFragment();
             dashHomeFrag.setArguments(null);
@@ -190,7 +190,7 @@ public class DashboardActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_recommended) {
-            Log.d(TAG, "Recommended option clicked");
+            Log.d(TAG, "Recommendations option clicked");
             toolbar.setTitle("Recommendations for you");
         } else if (id == R.id.nav_discover) {
             Log.d(TAG, "Discover option clicked");

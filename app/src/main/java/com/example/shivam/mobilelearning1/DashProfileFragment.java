@@ -3,7 +3,7 @@ package com.example.shivam.mobilelearning1;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
-import static android.content.ContentValues.TAG;
+import org.w3c.dom.Text;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,23 +27,24 @@ import static android.content.ContentValues.TAG;
  * Use the {@link DashProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-
 public class DashProfileFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private static final String TAG = "DashProfileFragment";
+    TextView userProfName;
+    View myInflater;
+    private FirebaseAuth mAuth;
+    FirebaseUser mUser;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    Boolean signedIn;
+    ImageView userProfPicView;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    private ImageView user_prof_image;
-    private TextView user_prof_name;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    private Uri user_img_uri;
-    private View myInflaterView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -51,14 +52,6 @@ public class DashProfileFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DashProfileFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static DashProfileFragment newInstance(String param1, String param2) {
         DashProfileFragment fragment = new DashProfileFragment();
@@ -76,23 +69,32 @@ public class DashProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-    }
+        Log.i(TAG, "onCreate");
 
-    private void update_user_deails(FirebaseUser user) {
-        user_img_uri = user.getPhotoUrl();
-        Picasso.with(getContext()).load(user_img_uri).into(user_prof_image);
-        user_prof_name.setText(user.getDisplayName());
+        //Get the current user details
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.i(TAG, "onCreateView");
+        myInflater = inflater.inflate(R.layout.fragment_2_dash_profile, container, false);
+        userProfName = (TextView)myInflater.findViewById(R.id.tv_user_prof_name);
+        userProfPicView = (ImageView)myInflater.findViewById(R.id.user_profile_image);
+
         // Inflate the layout for this fragment
-        myInflaterView = inflater.inflate(R.layout.fragment_2_dash_profile,container,false);
-        user_prof_image = (ImageView)myInflaterView.findViewById(R.id.profile_image);
-        user_prof_name = (TextView)myInflaterView.findViewById(R.id.tv_user_prof_name);
-        user_prof_name.setText("yellow");
-        return inflater.inflate(R.layout.fragment_2_dash_profile, container, false);
+        return myInflater;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.i(TAG, "onViewCreated");
+        userProfName.setText(mUser.getDisplayName());
+        Picasso.with(getActivity()).load(mUser.getPhotoUrl()).into(userProfPicView);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
