@@ -118,4 +118,5 @@
     <string name="you_have_successfully_completed_the_questionnaire_thank_you_for_your_patience_based_on_your_answers_we_have_determined_your_learning_style_to_be_as_follows">You have successfully completed the questionnaire. Thank you for your patience. Based on your answers, we have determined your learning style to be as follows:</string>
     <string name="your_result_here">Your result here</string>
     <string name="dashboard_home">Dashboard Home</string>
+    <string name="learning_style">Learning Style</string>
 </resources>

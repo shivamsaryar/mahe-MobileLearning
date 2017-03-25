@@ -954,46 +954,46 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
 
         //CHECK FOR ACTIVE-REFLECTIVE
         if(active_reflective > 3){
-            user_learning_style.add(0, "Active");
+            user_learning_style.add(0, "1_Active");
         }
         else if(active_reflective < -3){
-            user_learning_style.add(0, "Reflective");
+            user_learning_style.add(0, "2_Reflective");
         }
         else if(active_reflective <= 3 && active_reflective >=-3){
-            user_learning_style.add(0, "Active_Reflective_Balanced");
+            user_learning_style.add(0, "3_Active_Reflective_Balanced");
         }
 
         //CHECK FOR SENSING-INTUITIVE
         if(sensing_intuitive > 3){
-            user_learning_style.add(1, "Sensing");
+            user_learning_style.add(1, "4_Sensing");
         }
         else if(sensing_intuitive < -3){
-            user_learning_style.add(1, "Intuitive");
+            user_learning_style.add(1, "5_Intuitive");
         }
         else if(sensing_intuitive <= 3 && sensing_intuitive >= -3){
-            user_learning_style.add(1, "Sensing_Intuitive_Balanced");
+            user_learning_style.add(1, "6_Sensing_Intuitive_Balanced");
         }
 
         //CHECK FOR VISUAL-VERBAL
         if(visual_verbal > 3){
-            user_learning_style.add(2, "Visual");
+            user_learning_style.add(2, "7_Visual");
         }
         else if(visual_verbal < -3){
-            user_learning_style.add(2, "Verbal");
+            user_learning_style.add(2, "8_Verbal");
         }
         else if(visual_verbal <=3 && visual_verbal >= -3){
-            user_learning_style.add(2, "Visual_Verbal_Balanced");
+            user_learning_style.add(2, "9_Visual_Verbal_Balanced");
         }
 
         //CHECK FOR SEQUENTIAL-GLOBAL
         if(sequential_global > 3){
-            user_learning_style.add(3, "Sequential");
+            user_learning_style.add(3, "10_Sequential");
         }
         else if(sequential_global < -3){
-            user_learning_style.add(3, "Global");
+            user_learning_style.add(3, "11_Global");
         }
         else if(sequential_global <=3 && sequential_global >= -3){
-            user_learning_style.add("Sequential_Global_Balanced");
+            user_learning_style.add("12_Sequential_Global_Balanced");
         }
     }
 }

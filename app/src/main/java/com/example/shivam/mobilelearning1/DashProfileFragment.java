@@ -95,6 +95,7 @@ public class DashProfileFragment extends Fragment {
         Log.i(TAG, "onViewCreated");
         userProfName.setText(mUser.getDisplayName());
         Picasso.with(getActivity()).load(mUser.getPhotoUrl()).into(userProfPicView);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
