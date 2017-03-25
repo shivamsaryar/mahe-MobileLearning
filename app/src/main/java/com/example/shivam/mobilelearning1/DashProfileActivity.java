@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -42,9 +43,14 @@ public class DashProfileActivity extends AppCompatActivity {
         userProfName = (TextView) findViewById(R.id.tv_user_name_2);
         userProfPic = (ImageView) findViewById(R.id.user_profile_image_2);
 
+        mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+
+        updateUI();
+    }
+
+    private void updateUI() {
         userProfName.setText(mUser.getDisplayName());
         Picasso.with(getApplicationContext()).load(mUser.getPhotoUrl()).into(userProfPic);
-
     }
 }

@@ -17,11 +17,10 @@
             android:id="@+id/tv_user_name_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
             android:text="Name"
             android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:layout_marginTop="60dp"
-            android:layout_centerHorizontal="true"
-            />
+            android:textSize="35sp" />
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
