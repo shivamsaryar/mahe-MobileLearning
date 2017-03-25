@@ -16,28 +16,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.shivam.mobilelearning1.SplashActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.shivam.mobilelearning1.EmailPasswordActivity" />
+        <activity android:name=".EmailPasswordActivity" />
         <activity
-            android:name="com.example.shivam.mobilelearning1.QuestionnaireScrollingActivity"
+            android:name=".QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.shivam.mobilelearning1.DisplayLearningStyleActivity" />
-        <activity android:name="com.example.shivam.mobilelearning1.GoogleSignInActivity" />
-        <activity android:name="com.example.shivam.mobilelearning1.MainActivity" />
+        <activity android:name=".DisplayLearningStyleActivity" />
+        <activity android:name=".GoogleSignInActivity" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name="com.example.shivam.mobilelearning1.DashboardActivity"
+            android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.shivam.mobilelearning1.FirebaseStorageActivity" />
-        <activity android:name="com.example.shivam.mobilelearning1.PandaChatActivity" />
-        <activity android:name="com.example.shivam.mobilelearning1.StorageActivity"></activity>
+        <activity android:name=".FirebaseStorageActivity" />
+        <activity android:name=".PandaChatActivity" />
+        <activity android:name=".StorageActivity" />
+        <activity
+            android:name=".DashProfileActivity"
+            android:label="@string/title_activity_dash_profile"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

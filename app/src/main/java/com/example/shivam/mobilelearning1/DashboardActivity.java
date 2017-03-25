@@ -22,8 +22,7 @@ import com.squareup.picasso.Picasso;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        DashHomeFragment.OnFragmentInteractionListener,
-        DashProfileFragment.OnFragmentInteractionListener {
+        DashHomeFragment.OnFragmentInteractionListener {
 
     Toolbar toolbar = null;
     NavigationView navigationView = null;
@@ -180,14 +179,9 @@ public class DashboardActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
         else if (id == R.id.nav_profile) {
-            Log.d(TAG, "Profile option clicked");
-            toolbar.setTitle("Profile");
-            DashProfileFragment dashProfileFrag = new DashProfileFragment();
-            dashProfileFrag.setArguments(null);
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, dashProfileFrag);
-            fragmentTransaction.commit();
+
+            Intent profileIntent = new Intent(getApplicationContext(), DashProfileActivity.class);
+            startActivity(profileIntent);
 
         } else if (id == R.id.nav_recommended) {
             Log.d(TAG, "Recommendations option clicked");
