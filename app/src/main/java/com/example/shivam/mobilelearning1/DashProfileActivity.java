@@ -12,14 +12,15 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.squareup.picasso.Picasso;
 
 public class DashProfileActivity extends AppCompatActivity {
 
     private static final String TAG = "DashProfileActivity";
 
-    private FirebaseAuth mAuth;
-    private FirebaseUser mUser;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseAuth mAuth;
+    FirebaseUser mUser;
+    FirebaseAuth.AuthStateListener mAuthListener;
 
     private ImageView userProfPic;
     private TextView userProfName;
@@ -38,7 +39,12 @@ public class DashProfileActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        userProfName = (TextView) findViewById(R.id.tv_user_name_2);
+        userProfPic = (ImageView) findViewById(R.id.user_profile_image_2);
 
+        mUser = mAuth.getCurrentUser();
+        userProfName.setText(mUser.getDisplayName());
+        Picasso.with(getApplicationContext()).load(mUser.getPhotoUrl()).into(userProfPic);
 
     }
 }
