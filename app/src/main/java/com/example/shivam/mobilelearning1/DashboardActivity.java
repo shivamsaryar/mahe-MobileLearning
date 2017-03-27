@@ -39,7 +39,7 @@ public class DashboardActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_3_dashboard);
+        setContentView(R.layout.activity_6_dashboard);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -189,6 +189,8 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.nav_discover) {
             Log.d(TAG, "Discover option clicked");
             toolbar.setTitle("Discover");
+            Intent discoverIntent = new Intent(this, DashDiscoverActivity.class);
+            startActivity(discoverIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

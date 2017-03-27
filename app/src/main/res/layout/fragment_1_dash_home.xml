@@ -5,19 +5,9 @@
     tools:context="com.example.shivam.mobilelearning1.DashHomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <RelativeLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessParent">
+        android:text="@string/hello_blank_fragment" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/dashboard_home"
-            android:textSize="25sp" />
-    </RelativeLayout>
 </FrameLayout>

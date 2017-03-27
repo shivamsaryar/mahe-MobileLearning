@@ -23,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmailPasswordActivity" />
         <activity
             android:name=".QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
@@ -35,13 +34,12 @@
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FirebaseStorageActivity" />
-        <activity android:name=".PandaChatActivity" />
-        <activity android:name=".StorageActivity" />
         <activity
             android:name=".DashProfileActivity"
             android:label="@string/title_activity_dash_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DashHomeActivity" />
+        <activity android:name=".DashDiscoverActivity"></activity>
     </application>
 
 </manifest>

@@ -39,6 +39,7 @@ public class DashProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("My Profile");
 
         userProfName = (TextView) findViewById(R.id.tv_user_name_2);
         userProfPic = (ImageView) findViewById(R.id.user_profile_image_2);

@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
+
+import static android.R.attr.delay;
 
 public class QuestionnaireScrollingActivity extends BaseActivity{
 
@@ -918,13 +922,14 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
                 }
                 else{
                     showProgressDialog();
+                    submitButton.setEnabled(false);
+
                     //CALL FUNCTION TO COMPUTE LEARNING STYLE
                     computeLearningStyle();
                     Intent mNextIntent = new Intent(getApplicationContext(), DisplayLearningStyleActivity.class);
                     mNextIntent.putStringArrayListExtra("UserLearningStyle", user_learning_style);
                     hideProgressDialog();
                     startActivity(mNextIntent);
-                    //hideProgressDialog();
                 }
             }
         });
