@@ -83,8 +83,6 @@ public class DashDiscoverActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void addCourseButtons(String str) {
-        //get the list of children at the 'courses' node
-        //use the list to add buttons
 
         myButton = new Button(getApplicationContext());
         myButton.setText(str);
@@ -93,7 +91,6 @@ public class DashDiscoverActivity extends AppCompatActivity implements View.OnCl
         myButton.setLayoutParams(layoutParams);
         myLinearLayout.addView(myButton, layoutParams);
         Log.i(TAG, "button '" + str + "' added");
-
 
     }
 
