@@ -120,4 +120,9 @@
     <string name="dashboard_home">Dashboard Home</string>
     <string name="learning_style">Learning Style</string>
     <string name="title_activity_dash_profile">DashProfileActivity</string>
+    <string name="course_name">Course Name</string>
+    <string name="duration">Duration:</string>
+    <string name="end_date">End Date:</string>
+    <string name="level">Level:</string>
+    <string name="start_date">Start Date:</string>
 </resources>

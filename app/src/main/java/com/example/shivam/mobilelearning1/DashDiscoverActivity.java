@@ -20,7 +20,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 
-public class DashDiscoverActivity extends AppCompatActivity {
+public class DashDiscoverActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "DashDiscoverActivity";
     private StorageReference mStorageRef;
@@ -76,7 +76,6 @@ public class DashDiscoverActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void removeAllButtons() {
@@ -94,13 +93,8 @@ public class DashDiscoverActivity extends AppCompatActivity {
         myButton.setLayoutParams(layoutParams);
         myLinearLayout.addView(myButton, layoutParams);
         Log.i(TAG, "button '" + str + "' added");
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent courseDetailsIntent = new Intent(getApplicationContext(), CourseDetailsActivity.class);
-                startActivity(courseDetailsIntent);
-            }
-        });
+
+
     }
 
     @Override
@@ -119,5 +113,10 @@ public class DashDiscoverActivity extends AppCompatActivity {
         mRootRef.child("courses").child("Computer Science").child("Java").setValue("java course for beginners");
         mRootRef.child("courses").child("Computer Science").child("Python").setValue("Python course for beginners");
         mRootRef.child("courses").child("Computer Science").child("GitHub").setValue("GitHub course for beginners");
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
