@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
@@ -20,7 +21,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 
-public class DashDiscoverActivity extends AppCompatActivity implements View.OnClickListener{
+public class DashDiscoverActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = "DashDiscoverActivity";
     private StorageReference mStorageRef;
@@ -30,11 +31,14 @@ public class DashDiscoverActivity extends AppCompatActivity implements View.OnCl
     LinearLayout myLinearLayout;
     Button myButton;
     LinearLayout.LayoutParams layoutParams;
+    private ProgressBar myProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_discover);
+
+        myProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         courseList = new ArrayList<String>();
@@ -58,6 +62,9 @@ public class DashDiscoverActivity extends AppCompatActivity implements View.OnCl
         mRootRef.child("courses").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                myProgressBar.setVisibility(View.VISIBLE);
+
                 removeAllButtons();
 
                 for(DataSnapshot child:dataSnapshot.getChildren()){
@@ -68,6 +75,7 @@ public class DashDiscoverActivity extends AppCompatActivity implements View.OnCl
                     //Create buttons of the list of courses
                     addCourseButtons(str);
                 }
+                myProgressBar.setVisibility(View.INVISIBLE);
             }
 
             @Override
