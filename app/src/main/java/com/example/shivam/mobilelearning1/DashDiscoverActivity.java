@@ -99,7 +99,6 @@ public class DashDiscoverActivity extends BaseActivity implements View.OnClickLi
         myButton.setLayoutParams(layoutParams);
         myLinearLayout.addView(myButton, layoutParams);
         Log.i(TAG, "button '" + str + "' added");
-
     }
 
     @Override
