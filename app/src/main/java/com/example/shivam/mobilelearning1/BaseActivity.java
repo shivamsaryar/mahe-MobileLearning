@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
 
+    //Inside branch 1
+
     @VisibleForTesting
     public ProgressDialog mProgressDialog;
 
