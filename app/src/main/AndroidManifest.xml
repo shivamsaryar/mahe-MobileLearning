@@ -38,9 +38,9 @@
             android:name=".DashProfileActivity"
             android:label="@string/title_activity_dash_profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DashHomeActivity" />
         <activity android:name=".DashDiscoverActivity" />
-        <activity android:name=".CourseDetailsActivity"></activity>
+        <activity android:name=".CourseDetailsActivity" />
+        <activity android:name=".ViewTutorialActivity"></activity>
     </application>
 
 </manifest>
