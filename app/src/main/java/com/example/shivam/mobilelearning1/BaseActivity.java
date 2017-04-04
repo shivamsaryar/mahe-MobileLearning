@@ -1,4 +1,4 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 /**
  * Created by Shivam on 05-02-2017.
@@ -9,6 +9,8 @@ import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
+
+    //Inside branch 1
 
     @VisibleForTesting
     public ProgressDialog mProgressDialog;

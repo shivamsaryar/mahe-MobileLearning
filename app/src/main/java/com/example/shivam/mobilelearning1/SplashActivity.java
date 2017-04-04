@@ -1,10 +1,12 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,17 +16,18 @@ public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String MyTAG = "ShivamLog";
-
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Boolean signedIn;
+    ProgressBar splashProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_splash);
         Log.i(MyTAG, "onCreate()");
-
+        splashProgressBar = (ProgressBar) findViewById(R.id.splash_progress_bar);
+        splashProgressBar.setVisibility(View.VISIBLE);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -57,11 +60,13 @@ public class SplashActivity extends AppCompatActivity {
 
     private void proceed(Boolean signedIn) {
         if(signedIn == true){
+            splashProgressBar.setVisibility(View.INVISIBLE);
             Intent dashboardIntent = new Intent(SplashActivity.this, DashboardActivity.class);
             Toast.makeText(this, "Splash - User signed in", Toast.LENGTH_SHORT).show();
             startActivity(dashboardIntent);
         }
         else{
+            splashProgressBar.setVisibility(View.INVISIBLE);
             Intent loginIntent = new Intent(SplashActivity.this, GoogleSignInActivity.class);
             Toast.makeText(this, "Splash - User signed out", Toast.LENGTH_SHORT).show();
             startActivity(loginIntent);
@@ -85,6 +90,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i(MyTAG, "onResume()");
+        mAuth.addAuthStateListener(mAuthListener);
     }
 
     @Override
@@ -100,6 +106,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         Log.i(MyTAG, "onRestart");
+        mAuth.addAuthStateListener(mAuthListener);
     }
 
     @Override

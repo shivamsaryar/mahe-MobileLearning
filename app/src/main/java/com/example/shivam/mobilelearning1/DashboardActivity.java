@@ -1,4 +1,4 @@
-package com.example.shivam.MobileLearning;
+package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,15 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        DashHomeFragment.OnFragmentInteractionListener,
-        DashProfileFragment.OnFragmentInteractionListener {
+        DashHomeFragment.OnFragmentInteractionListener {
 
     Toolbar toolbar = null;
     NavigationView navigationView = null;
@@ -36,12 +34,12 @@ public class DashboardActivity extends AppCompatActivity
     TextView user_name;
     TextView user_email;
     ImageView user_profile_pic;
-    Uri imgUri;
+    public Uri imgUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_3_dashboard);
+        setContentView(R.layout.activity_6_dashboard);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -171,7 +169,7 @@ public class DashboardActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-            Log.d(TAG, "Camera option clicked");
+            Log.d(TAG, "Dashboard Home option clicked");
             toolbar.setTitle("Home");
             DashHomeFragment dashHomeFrag = new DashHomeFragment();
             dashHomeFrag.setArguments(null);
@@ -181,23 +179,18 @@ public class DashboardActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
         else if (id == R.id.nav_profile) {
-            Log.d(TAG, "Profile option clicked");
-            toolbar.setTitle("Profile");
-            DashProfileFragment dashProfileFrag = new DashProfileFragment();
-            dashProfileFrag.setArguments(null);
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, dashProfileFrag);
-            fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_slideshow) {
+            Intent profileIntent = new Intent(getApplicationContext(), DashProfileActivity.class);
+            startActivity(profileIntent);
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_recommended) {
+            Log.d(TAG, "Recommendations option clicked");
+            toolbar.setTitle("Recommendations for you");
+        } else if (id == R.id.nav_discover) {
+            Log.d(TAG, "Discover option clicked");
+            toolbar.setTitle("Discover");
+            Intent discoverIntent = new Intent(this, DashDiscoverActivity.class);
+            startActivity(discoverIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -111,4 +111,20 @@
     <string name="proceed_to_questionnaire">Proceed to Questionnaire</string>
     <string name="sign_in_with_google">Sign In With Google</string>
     <string name="proceed_to_dashboard_button_text">Proceed to Dashboard</string>
+    <string name="name">Name</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signin_details">SignIn Details</string>
+    <string name="signin_status">SignIn Status</string>
+    <string name="you_have_successfully_completed_the_questionnaire_thank_you_for_your_patience_based_on_your_answers_we_have_determined_your_learning_style_to_be_as_follows">You have successfully completed the questionnaire. Thank you for your patience. Based on your answers, we have determined your learning style to be as follows:</string>
+    <string name="your_result_here">Your result here</string>
+    <string name="dashboard_home">Dashboard Home</string>
+    <string name="learning_style">Learning Style</string>
+    <string name="title_activity_dash_profile">DashProfileActivity</string>
+    <string name="course_name">Course Name</string>
+    <string name="duration">Duration</string>
+    <string name="end_date">End Date</string>
+    <string name="level">Level</string>
+    <string name="start_date">Start Date</string>
+    <string name="enroll">Enroll</string>
+    <string name="instructor">Instructor</string>
 </resources>

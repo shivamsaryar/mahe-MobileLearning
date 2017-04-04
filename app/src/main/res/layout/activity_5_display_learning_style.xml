@@ -8,10 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.shivam.MobileLearning.DisplayLearningStyleActivity">
+    tools:context="com.example.shivam.mobilelearning1.DisplayLearningStyleActivity">
 
     <TextView
-        android:text="You have successfully completed the questionnaire. Thank you for your patience. Based on your answers, we have determined your learning style to be as follows:"
+        android:text="@string/you_have_successfully_completed_the_questionnaire_thank_you_for_your_patience_based_on_your_answers_we_have_determined_your_learning_style_to_be_as_follows"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:id="@+id/text_view_result_1" />
 
     <TextView
-        android:text="Your result here"
+        android:text="@string/your_result_here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_view_result_2"
