@@ -22,6 +22,17 @@
         android:orientation="vertical"
         android:visibility="visible">
 
+        <ImageButton
+            android:id="@+id/img_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:maxWidth="10dp"
+            android:maxHeight="10dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="34dp"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
     </LinearLayout>
 
     <ProgressBar
