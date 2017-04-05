@@ -35,7 +35,7 @@ public class DashHomeFragment extends Fragment {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     DatabaseReference mRootRef;
-    ArrayList<String> enrolledCourses = new ArrayList<String>();
+    ArrayList<String> enrolledCourses;
     ProgressBar homeProgressBar;
     String courseName;
 
@@ -51,20 +51,26 @@ public class DashHomeFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+        enrolledCourses = new ArrayList<String>();
+
         mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+                //Show progressBar while loading the buttons
                 homeProgressBar.setVisibility(View.VISIBLE);
 
+                //Get snapshot of all the children of users/enrolled_courses/Ongoing
                 for(DataSnapshot child:dataSnapshot.getChildren()){
                     enrolledCourses.add(child.getKey());
                     Log.i(TAG, child.getKey());
                     courseName = child.getKey();
 
-                    //Create buttons of the list of courses
+                    //Call createButton function for each of the children
                     createCourseButtons(courseName);
                 }
+
+                //Hide progress bar after the creation of all buttons
                 homeProgressBar.setVisibility(View.INVISIBLE);
             }
 
@@ -98,6 +104,8 @@ public class DashHomeFragment extends Fragment {
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent mIntent = new Intent(getActivity(), ViewTutorialActivity.class);
+                startActivity(mIntent);
 
             }
         });

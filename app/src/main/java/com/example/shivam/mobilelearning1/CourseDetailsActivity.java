@@ -46,7 +46,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_details);
+        setContentView(R.layout.activity_7_course_details);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mRootRef = FirebaseDatabase.getInstance().getReference();

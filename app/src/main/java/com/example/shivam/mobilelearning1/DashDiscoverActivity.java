@@ -39,7 +39,7 @@ public class DashDiscoverActivity extends BaseActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_discover);
+        setContentView(R.layout.activity_6_3_dash_discover);
 
         myProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
