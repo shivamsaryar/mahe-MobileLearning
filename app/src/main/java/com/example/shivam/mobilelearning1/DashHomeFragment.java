@@ -1,6 +1,7 @@
 package com.example.shivam.mobilelearning1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,9 +19,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class DashHomeFragment extends Fragment {
 
@@ -34,6 +37,7 @@ public class DashHomeFragment extends Fragment {
     DatabaseReference mRootRef;
     ArrayList<String> enrolledCourses = new ArrayList<String>();
     ProgressBar homeProgressBar;
+    String courseName;
 
     public DashHomeFragment() {
         // Required empty public constructor
@@ -56,7 +60,7 @@ public class DashHomeFragment extends Fragment {
                 for(DataSnapshot child:dataSnapshot.getChildren()){
                     enrolledCourses.add(child.getKey());
                     Log.i(TAG, child.getKey());
-                    String courseName = child.getKey();
+                    courseName = child.getKey();
 
                     //Create buttons of the list of courses
                     createCourseButtons(courseName);
@@ -82,7 +86,8 @@ public class DashHomeFragment extends Fragment {
         return view;
     }
 
-    private void createCourseButtons(String courseName) {
+    private void createCourseButtons(final String courseName) {
+
         final Button myButton = new Button(getActivity());
         myButton.setText(courseName);
         myButton.setBackgroundColor(0xff0000ff);
@@ -90,6 +95,12 @@ public class DashHomeFragment extends Fragment {
         myButton.setLayoutParams(layoutParams);
         homeLinearLayout.addView(myButton, layoutParams);
         Log.i(TAG, "button '" + courseName + "' added");
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
