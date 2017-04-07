@@ -1,39 +1,38 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.shivam.mobilelearning1.DashHomeFragment">
+    android:orientation="vertical"
+    tools:context="com.example.shivam.mobilelearning1.A2a_DashHomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/textViewMyCourses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/enrolled_courses"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <ProgressBar
         android:id="@+id/dashHome_progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        />
 
     <TextView
-        android:id="@+id/textViewMyCourses"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Enrolled Courses"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <ScrollView
-        android:id="@+id/home_scroll_view"
+        android:id="@+id/textViewNoCourses"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="100dp"
+        android:text="You are currently not enolled into any course"
+        android:textSize="25sp"
+        android:textStyle="italic" />
 
-        <LinearLayout
-            android:id="@+id/home_linear_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
-
-    </ScrollView>
-</RelativeLayout>
+</LinearLayout>

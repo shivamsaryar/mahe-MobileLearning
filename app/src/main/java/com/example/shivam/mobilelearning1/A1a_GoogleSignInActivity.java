@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class GoogleSignInActivity extends BaseActivity implements
+public class A1a_GoogleSignInActivity extends BaseActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
@@ -155,11 +155,11 @@ public class GoogleSignInActivity extends BaseActivity implements
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(GoogleSignInActivity.this, "Authentication failed.",
+                            Toast.makeText(A1a_GoogleSignInActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Intent questionnaireIntent = new Intent(getApplicationContext(), QuestionnaireScrollingActivity.class);
+                            Intent questionnaireIntent = new Intent(getApplicationContext(), A1b_QuestionnaireScrollingActivity.class);
                             startActivity(questionnaireIntent);
                         }
                         // [START_EXCLUDE]

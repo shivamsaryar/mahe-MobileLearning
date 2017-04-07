@@ -11,9 +11,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.squareup.picasso.Picasso;
 
-public class DashProfileActivity extends AppCompatActivity {
+public class A2b_DashProfileActivity extends AppCompatActivity {
 
-    private static final String TAG = "DashProfileActivity";
+    private static final String TAG = "A2b_DashProfileActivity";
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;

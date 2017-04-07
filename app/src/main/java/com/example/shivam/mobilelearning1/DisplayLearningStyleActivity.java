@@ -42,7 +42,7 @@ public class DisplayLearningStyleActivity extends BaseActivity{
         toDashboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toDashIntent = new Intent(getApplicationContext(), DashboardActivity.class);
+                Intent toDashIntent = new Intent(getApplicationContext(), A2_DashboardActivity.class);
                 startActivity(toDashIntent);
             }
         });

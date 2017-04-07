@@ -9,22 +9,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class DashDiscoverActivity extends BaseActivity{
+public class A2c1_DashDiscoverActivity extends BaseActivity{
 
-    private static final String TAG = "DashDiscoverActivity";
+    private static final String TAG = "A2c1_DashDiscoverActivity";
     private StorageReference mStorageRef;
     private DatabaseReference mRootRef;
     private ImageView mImage;
@@ -46,21 +43,20 @@ public class DashDiscoverActivity extends BaseActivity{
         mRootRef = FirebaseDatabase.getInstance().getReference();
         courseList = new ArrayList<String>();
         courseIdList = new ArrayList<Integer>();
-        mImage = (ImageView) findViewById(R.id.img_test);
+        //mImage = (ImageView) findViewById(R.id.img_test);
         myLinearLayout = (LinearLayout) findViewById(R.id.my_linear_layout);
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0,20,0,0);
 
-        //set initial nodes in the database
-        //setInitialNodes();
-
         //Get photo from online storage
+        /*
         mStorageRef = FirebaseStorage.getInstance().getReference();
         StorageReference sr = mStorageRef.child("Wallpapers/abstract_wallpaper_1.jpg");
         Glide.with(this)
                 .using(new FirebaseImageLoader())
                 .load(sr)
                 .into(mImage);
+        */
 
         //Add listener to read all the node values
         mRootRef.child("courses").addValueEventListener(new ValueEventListener() {
@@ -69,28 +65,29 @@ public class DashDiscoverActivity extends BaseActivity{
 
                 myProgressBar.setVisibility(View.VISIBLE);
 
-                removeAllButtons();
+                //Remove all previously created button views (Refresh the layout)
+                myLinearLayout.removeAllViews();
 
-                for(DataSnapshot child:dataSnapshot.getChildren()){
-                    courseList.add(child.getKey());
-                    Log.i(TAG, child.getKey());
-                    courseName = child.getKey();
+                try{
+                    for(DataSnapshot child:dataSnapshot.getChildren()){
+                        Log.i(TAG, child.toString());
+                        courseList.add(child.getKey());
+                        Log.i(TAG, child.getKey());
+                        courseName = child.getKey();
 
-                    //Create buttons of the list of courses
-                    createCourseButtons(courseName);
+                        //Create buttons of the list of courses
+                        createCourseButtons(courseName);
+                    }
+                    myProgressBar.setVisibility(View.INVISIBLE);
                 }
-                myProgressBar.setVisibility(View.INVISIBLE);
+                catch(Exception e){
+                    Log.i(TAG, "Unable to fetch all children");
+                }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
-    }
-
-    private void removeAllButtons() {
-        myLinearLayout.removeAllViews();
     }
 
     private void createCourseButtons(String str) {
@@ -107,7 +104,7 @@ public class DashDiscoverActivity extends BaseActivity{
             public void onClick(View v) {
 
                 //Get course ID
-                mRootRef.child("courses").child(courseName).addValueEventListener(new ValueEventListener() {
+                mRootRef.child("courses").child(courseName).child("Details").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot2) {
                         GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
@@ -122,7 +119,7 @@ public class DashDiscoverActivity extends BaseActivity{
                 });
 
                 Log.i(TAG, myButton.getText().toString());
-                Intent courseDetailsIntent = new Intent(getApplicationContext(), CourseDetailsActivity.class);
+                Intent courseDetailsIntent = new Intent(getApplicationContext(), A2c2_CourseDetailsActivity.class);
                 courseDetailsIntent.putExtra("CourseName", myButton.getText().toString());
                 courseDetailsIntent.putExtra("CourseID", courseID);
                 startActivity(courseDetailsIntent);

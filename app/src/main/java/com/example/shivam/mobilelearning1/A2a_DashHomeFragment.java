@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,15 +20,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-public class DashHomeFragment extends Fragment {
+public class A2a_DashHomeFragment extends Fragment {
 
-    private static final String TAG = "DashboardActivity";
+    private static final String TAG = "A2_DashboardActivity";
     private OnFragmentInteractionListener mListener;
     View view;
     LinearLayout homeLinearLayout;
@@ -38,8 +37,9 @@ public class DashHomeFragment extends Fragment {
     ArrayList<String> enrolledCourses;
     ProgressBar homeProgressBar;
     String courseName;
+    TextView noCoursesText;
 
-    public DashHomeFragment() {
+    public A2a_DashHomeFragment() {
         // Required empty public constructor
     }
 
@@ -70,6 +70,9 @@ public class DashHomeFragment extends Fragment {
                     createCourseButtons(courseName);
                 }
 
+                if(enrolledCourses.size() == 0){
+                    noCoursesText.setVisibility(View.VISIBLE);
+                }
                 //Hide progress bar after the creation of all buttons
                 homeProgressBar.setVisibility(View.INVISIBLE);
             }
@@ -85,6 +88,8 @@ public class DashHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_1_dash_home, container, false);
+        noCoursesText = (TextView) view.findViewById(R.id.textViewNoCourses);
+        noCoursesText.setVisibility(View.INVISIBLE);
         homeProgressBar = (ProgressBar) view.findViewById(R.id.dashHome_progressBar);
         homeLinearLayout = (LinearLayout) view.findViewById(R.id.home_linear_layout);
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -104,7 +109,7 @@ public class DashHomeFragment extends Fragment {
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(getActivity(), ViewTutorialActivity.class);
+                Intent mIntent = new Intent(getActivity(), A4_ViewTutorialActivity.class);
                 startActivity(mIntent);
 
             }

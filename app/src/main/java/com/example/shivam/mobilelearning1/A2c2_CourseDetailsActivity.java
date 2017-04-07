@@ -21,9 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CourseDetailsActivity extends AppCompatActivity {
+public class A2c2_CourseDetailsActivity extends AppCompatActivity {
 
-    private static final String TAG = "CourseDetailsActivity";
+    private static final String TAG = "A2c2_CourseDetailsActivity";
     DatabaseReference mRootRef;
     Bundle courseBundle;
     String courseID;
@@ -67,7 +67,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
 
         Log.i(TAG, courseName);
 
-        mRootRef.child("courses").child(courseName).addValueEventListener(new ValueEventListener() {
+        mRootRef.child("courses").child(courseName).child("Details").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -94,8 +94,8 @@ public class CourseDetailsActivity extends AppCompatActivity {
                 Map<String, Object> childUpdates = new HashMap<>();
                 childUpdates.put(courseName,"ongoing");
                 mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").updateChildren(childUpdates);
-                Intent mIntent = new Intent(getApplicationContext(), DashboardActivity.class);
-                Toast.makeText(CourseDetailsActivity.this, "You have successfully enrolled for the course!", Toast.LENGTH_SHORT).show();
+                Intent mIntent = new Intent(getApplicationContext(), A2_DashboardActivity.class);
+                Toast.makeText(A2c2_CourseDetailsActivity.this, "You have successfully enrolled for the course!", Toast.LENGTH_SHORT).show();
                 startActivity(mIntent);
             }
         });

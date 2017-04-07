@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SplashActivity extends AppCompatActivity {
+public class A1_SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String MyTAG = "ShivamLog";
@@ -61,13 +61,13 @@ public class SplashActivity extends AppCompatActivity {
     private void proceed(Boolean signedIn) {
         if(signedIn == true){
             splashProgressBar.setVisibility(View.INVISIBLE);
-            Intent dashboardIntent = new Intent(SplashActivity.this, DashboardActivity.class);
+            Intent dashboardIntent = new Intent(A1_SplashActivity.this, A2_DashboardActivity.class);
             Toast.makeText(this, "Splash - User signed in", Toast.LENGTH_SHORT).show();
             startActivity(dashboardIntent);
         }
         else{
             splashProgressBar.setVisibility(View.INVISIBLE);
-            Intent loginIntent = new Intent(SplashActivity.this, GoogleSignInActivity.class);
+            Intent loginIntent = new Intent(A1_SplashActivity.this, A1a_GoogleSignInActivity.class);
             Toast.makeText(this, "Splash - User signed out", Toast.LENGTH_SHORT).show();
             startActivity(loginIntent);
         }

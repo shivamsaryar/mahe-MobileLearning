@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.shivam.mobilelearning1.GoogleSignInActivity">
+    tools:context="com.example.shivam.mobilelearning1.A1a_GoogleSignInActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -46,7 +46,6 @@
             android:id="@+id/details_text_view"
             android:textSize="20sp"
             android:layout_marginTop="20dp" />
-
 
     </LinearLayout>
 </RelativeLayout>

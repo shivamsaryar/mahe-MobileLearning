@@ -14,12 +14,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
-import static android.R.attr.delay;
-
-public class QuestionnaireScrollingActivity extends BaseActivity{
+public class A1b_QuestionnaireScrollingActivity extends BaseActivity{
 
     CheckBox skipCheckBox;
 
@@ -918,7 +914,7 @@ public class QuestionnaireScrollingActivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 if(Arrays.asList(final_result).contains(0)){
-                    Toast.makeText(QuestionnaireScrollingActivity.this, "All questions are mandatory.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(A1b_QuestionnaireScrollingActivity.this, "All questions are mandatory.", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     showProgressDialog();

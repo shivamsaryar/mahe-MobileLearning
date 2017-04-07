@@ -17,7 +17,7 @@ public class MainActivity extends BaseActivity{
     APPLICATION ACTIVITY SEQUENCE:
     BaseActivity
     MainActivity
-    QuestionnaireScrollingActivity
+    A1b_QuestionnaireScrollingActivity
     DisplayLearningStyleActivity
     Dashboard
     */
@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity{
         }
 
         proceedToQuestionnaire = (Button) findViewById(R.id.proceed_to_questionnaire_button);
-        final Intent proceedToQuestionnaireIntent = new Intent(this, QuestionnaireScrollingActivity.class);
+        final Intent proceedToQuestionnaireIntent = new Intent(this, A1b_QuestionnaireScrollingActivity.class);
         proceedToQuestionnaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity{
         proceedToGoogleSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent mGoogleSignInIntent = new Intent(getApplicationContext(), GoogleSignInActivity.class);
+                final Intent mGoogleSignInIntent = new Intent(getApplicationContext(), A1a_GoogleSignInActivity.class);
                 startActivity(mGoogleSignInIntent);
             }
         });
@@ -70,7 +70,7 @@ public class MainActivity extends BaseActivity{
         proceedToDashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent dashboardIntent = new Intent(MainActivity.this, DashboardActivity.class);
+                final Intent dashboardIntent = new Intent(MainActivity.this, A2_DashboardActivity.class);
                 startActivity(dashboardIntent);
             }
         });

@@ -20,9 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
-public class DashboardActivity extends AppCompatActivity
+public class A2_DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        DashHomeFragment.OnFragmentInteractionListener {
+        A2a_DashHomeFragment.OnFragmentInteractionListener {
 
     Toolbar toolbar = null;
     NavigationView navigationView = null;
@@ -62,7 +62,6 @@ public class DashboardActivity extends AppCompatActivity
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged: signed_in");
@@ -80,7 +79,7 @@ public class DashboardActivity extends AppCompatActivity
         };
 
         //[START - SET HOME FRAGMENT AS THE DEFAULT DRAWER FRAGMENT]
-        DashHomeFragment dashHomeFrag = new DashHomeFragment();
+        A2a_DashHomeFragment dashHomeFrag = new A2a_DashHomeFragment();
         dashHomeFrag.setArguments(null);
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
@@ -171,7 +170,7 @@ public class DashboardActivity extends AppCompatActivity
             // Handle the camera action
             Log.d(TAG, "Dashboard Home option clicked");
             toolbar.setTitle("Home");
-            DashHomeFragment dashHomeFrag = new DashHomeFragment();
+            A2a_DashHomeFragment dashHomeFrag = new A2a_DashHomeFragment();
             dashHomeFrag.setArguments(null);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
@@ -180,7 +179,7 @@ public class DashboardActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_profile) {
 
-            Intent profileIntent = new Intent(getApplicationContext(), DashProfileActivity.class);
+            Intent profileIntent = new Intent(getApplicationContext(), A2b_DashProfileActivity.class);
             startActivity(profileIntent);
 
         } else if (id == R.id.nav_recommended) {
@@ -189,7 +188,7 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.nav_discover) {
             Log.d(TAG, "Discover option clicked");
             toolbar.setTitle("Discover");
-            Intent discoverIntent = new Intent(this, DashDiscoverActivity.class);
+            Intent discoverIntent = new Intent(this, A2c1_DashDiscoverActivity.class);
             startActivity(discoverIntent);
         }
 

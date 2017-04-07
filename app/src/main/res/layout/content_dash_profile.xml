@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.shivam.mobilelearning1.DashProfileActivity"
+    tools:context="com.example.shivam.mobilelearning1.A2b_DashProfileActivity"
     tools:showIn="@layout/activity_6_2_dash_profile">
 
 

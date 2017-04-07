@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".A1_SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,23 +24,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".QuestionnaireScrollingActivity"
+            android:name=".A1b_QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DisplayLearningStyleActivity" />
-        <activity android:name=".GoogleSignInActivity" />
+        <activity android:name=".A1a_GoogleSignInActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".A2_DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DashProfileActivity"
+            android:name=".A2b_DashProfileActivity"
             android:label="@string/title_activity_dash_profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DashDiscoverActivity" />
-        <activity android:name=".CourseDetailsActivity" />
-        <activity android:name=".ViewTutorialActivity"></activity>
+        <activity android:name=".A2c1_DashDiscoverActivity" />
+        <activity android:name=".A2c2_CourseDetailsActivity" />
+        <activity android:name=".A4_ViewTutorialActivity" />
+        <activity android:name=".A3_CourseTopicsActivity"></activity>
     </application>
 
 </manifest>
