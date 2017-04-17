@@ -40,8 +40,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".A2c1_DashDiscoverActivity" />
         <activity android:name=".A2c2_CourseDetailsActivity" />
-        <activity android:name=".A4_ViewTutorialActivity" />
-        <activity android:name=".A3_CourseTopicsActivity"></activity>
+        <activity android:name=".A3_CourseTopicsActivity" />
+        <activity android:name=".A4_TopicFiles" />
+        <activity android:name=".A5_ViewCoursePDF"></activity>
     </application>
 
 </manifest>

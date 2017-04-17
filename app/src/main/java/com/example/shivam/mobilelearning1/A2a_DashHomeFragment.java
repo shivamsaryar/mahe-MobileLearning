@@ -2,6 +2,7 @@ package com.example.shivam.mobilelearning1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -101,17 +102,17 @@ public class A2a_DashHomeFragment extends Fragment {
 
         final Button myButton = new Button(getActivity());
         myButton.setText(courseName);
-        myButton.setBackgroundColor(0xff0000ff);
-        myButton.setTextColor(0xffffffff);
+        myButton.setBackgroundColor(Color.RED);
+        myButton.setTextColor(Color.WHITE);
         myButton.setLayoutParams(layoutParams);
         homeLinearLayout.addView(myButton, layoutParams);
         Log.i(TAG, "button '" + courseName + "' added");
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(getActivity(), A4_ViewTutorialActivity.class);
+                Intent mIntent = new Intent(getActivity(), A3_CourseTopicsActivity.class);
+                mIntent.putExtra("CourseName", myButton.getText().toString());
                 startActivity(mIntent);
-
             }
         });
     }

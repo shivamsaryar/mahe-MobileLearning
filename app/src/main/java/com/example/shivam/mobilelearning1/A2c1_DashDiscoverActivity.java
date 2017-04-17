@@ -1,6 +1,7 @@
 package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,59 +22,40 @@ import java.util.Map;
 
 public class A2c1_DashDiscoverActivity extends BaseActivity{
 
-    private static final String TAG = "A2c1_DashDiscoverActivity";
-    private StorageReference mStorageRef;
+    private static final String TAG = "DashDiscoverActivity";
     private DatabaseReference mRootRef;
-    private ImageView mImage;
-    private ArrayList <String> courseList;
     LinearLayout myLinearLayout;
     LinearLayout.LayoutParams layoutParams;
     private ProgressBar myProgressBar;
-    String courseID;
     String courseName;
-    private ArrayList<Integer> courseIdList;
+    Boolean courseAlreadyEnrolled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_6_3_dash_discover);
 
-        myProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
-
         mRootRef = FirebaseDatabase.getInstance().getReference();
-        courseList = new ArrayList<String>();
-        courseIdList = new ArrayList<Integer>();
-        //mImage = (ImageView) findViewById(R.id.img_test);
+        myProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
         myLinearLayout = (LinearLayout) findViewById(R.id.my_linear_layout);
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0,20,0,0);
-
-        //Get photo from online storage
-        /*
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-        StorageReference sr = mStorageRef.child("Wallpapers/abstract_wallpaper_1.jpg");
-        Glide.with(this)
-                .using(new FirebaseImageLoader())
-                .load(sr)
-                .into(mImage);
-        */
 
         //Add listener to read all the node values
         mRootRef.child("courses").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                Log.i(TAG, "onDataChanged called");
                 myProgressBar.setVisibility(View.VISIBLE);
-
                 //Remove all previously created button views (Refresh the layout)
                 myLinearLayout.removeAllViews();
-
                 try{
                     for(DataSnapshot child:dataSnapshot.getChildren()){
-                        Log.i(TAG, child.toString());
-                        courseList.add(child.getKey());
-                        Log.i(TAG, child.getKey());
                         courseName = child.getKey();
+                        //Display the key value pairs of the Event name node and all it's sub-nodes
+                        Log.i(TAG, child.toString());
+                        //Display the Event name (parent/key) node
+                        Log.i(TAG, child.getKey());
 
                         //Create buttons of the list of courses
                         createCourseButtons(courseName);
@@ -81,47 +63,32 @@ public class A2c1_DashDiscoverActivity extends BaseActivity{
                     myProgressBar.setVisibility(View.INVISIBLE);
                 }
                 catch(Exception e){
-                    Log.i(TAG, "Unable to fetch all children");
+                    Log.i(TAG, "Unable to fetch nodes");
                 }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
+
     }
 
     private void createCourseButtons(String str) {
 
         final Button myButton = new Button(getApplicationContext());
         myButton.setText(str);
-        myButton.setBackgroundColor(0xff0000ff);
-        myButton.setTextColor(0xffffffff);
+        myButton.setBackgroundColor(Color.BLUE);
+        myButton.setTextColor(Color.WHITE);
         myButton.setLayoutParams(layoutParams);
         myLinearLayout.addView(myButton, layoutParams);
         Log.i(TAG, "button '" + str + "' added");
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //Get course ID
-                mRootRef.child("courses").child(courseName).child("Details").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot2) {
-                        GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
-                        Map<String, String> map = dataSnapshot2.getValue(genericTypeIndicator );
-                        courseID = map.get("CourseID").toString();
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
                 Log.i(TAG, myButton.getText().toString());
                 Intent courseDetailsIntent = new Intent(getApplicationContext(), A2c2_CourseDetailsActivity.class);
                 courseDetailsIntent.putExtra("CourseName", myButton.getText().toString());
-                courseDetailsIntent.putExtra("CourseID", courseID);
                 startActivity(courseDetailsIntent);
             }
         });

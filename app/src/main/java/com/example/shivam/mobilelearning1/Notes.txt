@@ -17,3 +17,17 @@
 
 6. Adding drawable icons:
     batch drawable import
+
+7. //Get photo from online storage
+
+           mStorageRef = FirebaseStorage.getInstance().getReference();
+           StorageReference sr = mStorageRef.child("Wallpapers/abstract_wallpaper_1.jpg");
+           Glide.with(this)
+                   .using(new FirebaseImageLoader())
+                   .load(sr)
+                   .into(mImage);
+
+8. If the user is global, show topics list, else if sequential, do not show topics list.
+9. If user is visual, recommend videos, else recommend pdf
+10. If user is Active, give some questions or tasks to do after each topic
+11. Sensing/intuitive

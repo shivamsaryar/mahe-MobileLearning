@@ -23,10 +23,9 @@ import java.util.Map;
 
 public class A2c2_CourseDetailsActivity extends AppCompatActivity {
 
-    private static final String TAG = "A2c2_CourseDetailsActivity";
+    private static final String TAG = "CourseDetailsActivity";
     DatabaseReference mRootRef;
     Bundle courseBundle;
-    String courseID;
     String courseName;
     String courseStartDate;
     String courseEndDate;
@@ -62,10 +61,7 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
         courseBundle = getIntent().getExtras();
         if(courseBundle != null){
             courseName = courseBundle.getString("CourseName");
-            courseID = courseBundle.getString("CourseID");
         }
-
-        Log.i(TAG, courseName);
 
         mRootRef.child("courses").child(courseName).child("Details").addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,6 +76,7 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
                 courseLevel = map.get("Level");
                 courseDuration = map.get("Duration");
 
+                //Update the UI with the course details information
                 updateUI(courseStartDate, courseEndDate, courseInstructor, courseLevel, courseDuration);
             }
             @Override
@@ -103,7 +100,6 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
     }
 
     private void updateUI(String courseStartDate, String courseEndDate, String courseInstructor, String courseLevel, String courseDuration) {
-
         textCourseNameTitle.setText(courseName);
         textStartDate.setText(courseStartDate);
         textEndDate.setText(courseEndDate);
