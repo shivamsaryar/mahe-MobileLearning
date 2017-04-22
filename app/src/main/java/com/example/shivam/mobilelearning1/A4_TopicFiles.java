@@ -12,7 +12,7 @@ public class A4_TopicFiles extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_9_topic_files);
 
-        Intent mIntent = new Intent(this, A5_ViewCoursePDF.class);
+        Intent mIntent = new Intent(this, A6_ViewCourseVideo.class);
         startActivity(mIntent);
     }
 }

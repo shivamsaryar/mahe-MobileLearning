@@ -31,3 +31,6 @@
 9. If user is visual, recommend videos, else recommend pdf
 10. If user is Active, give some questions or tasks to do after each topic
 11. Sensing/intuitive
+12. View PDFs
+13. For playing video from Firebase, use 'setVideoPath' for the video view,
+    and use the 'Download URL' from firebase storage console for the video path string
