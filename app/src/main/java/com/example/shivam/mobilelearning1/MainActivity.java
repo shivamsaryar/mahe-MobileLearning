@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity{
     BaseActivity
     MainActivity
     A1b_QuestionnaireScrollingActivity
-    DisplayLearningStyleActivity
+    A1c_DisplayLearningStyleActivity
     Dashboard
     */
 

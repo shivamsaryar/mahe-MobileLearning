@@ -922,7 +922,7 @@ public class A1b_QuestionnaireScrollingActivity extends BaseActivity{
 
                     //CALL FUNCTION TO COMPUTE LEARNING STYLE
                     computeLearningStyle();
-                    Intent mNextIntent = new Intent(getApplicationContext(), DisplayLearningStyleActivity.class);
+                    Intent mNextIntent = new Intent(getApplicationContext(), A1c_DisplayLearningStyleActivity.class);
                     mNextIntent.putStringArrayListExtra("UserLearningStyle", user_learning_style);
                     hideProgressDialog();
                     startActivity(mNextIntent);
@@ -955,46 +955,46 @@ public class A1b_QuestionnaireScrollingActivity extends BaseActivity{
 
         //CHECK FOR ACTIVE-REFLECTIVE
         if(active_reflective > 3){
-            user_learning_style.add(0, "1_Active");
+            user_learning_style.add(0, "1_Active Learner");
         }
         else if(active_reflective < -3){
-            user_learning_style.add(0, "2_Reflective");
+            user_learning_style.add(0, "1_Reflective Learner");
         }
         else if(active_reflective <= 3 && active_reflective >=-3){
-            user_learning_style.add(0, "3_Active_Reflective_Balanced");
+            user_learning_style.add(0, "1_Active/Reflective: Balanced");
         }
 
         //CHECK FOR SENSING-INTUITIVE
         if(sensing_intuitive > 3){
-            user_learning_style.add(1, "4_Sensing");
+            user_learning_style.add(1, "2_Sensing Learner");
         }
         else if(sensing_intuitive < -3){
-            user_learning_style.add(1, "5_Intuitive");
+            user_learning_style.add(1, "2_Intuitive Learner");
         }
         else if(sensing_intuitive <= 3 && sensing_intuitive >= -3){
-            user_learning_style.add(1, "6_Sensing_Intuitive_Balanced");
+            user_learning_style.add(1, "2_Sensing/Intuitive: Balanced");
         }
 
         //CHECK FOR VISUAL-VERBAL
         if(visual_verbal > 3){
-            user_learning_style.add(2, "7_Visual");
+            user_learning_style.add(2, "3_Visual Learner");
         }
         else if(visual_verbal < -3){
-            user_learning_style.add(2, "8_Verbal");
+            user_learning_style.add(2, "3_Verbal Learner");
         }
         else if(visual_verbal <=3 && visual_verbal >= -3){
-            user_learning_style.add(2, "9_Visual_Verbal_Balanced");
+            user_learning_style.add(2, "3_Visual/Verbal: Balanced");
         }
 
         //CHECK FOR SEQUENTIAL-GLOBAL
         if(sequential_global > 3){
-            user_learning_style.add(3, "10_Sequential");
+            user_learning_style.add(3, "4_Sequential Learner");
         }
         else if(sequential_global < -3){
-            user_learning_style.add(3, "11_Global");
+            user_learning_style.add(3, "4_Global Learner");
         }
         else if(sequential_global <=3 && sequential_global >= -3){
-            user_learning_style.add("12_Sequential_Global_Balanced");
+            user_learning_style.add("4_Sequential/Global: Balanced");
         }
     }
 }

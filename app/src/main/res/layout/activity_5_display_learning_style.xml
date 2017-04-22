@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.shivam.mobilelearning1.DisplayLearningStyleActivity">
+    tools:context="com.example.shivam.mobilelearning1.A1c_DisplayLearningStyleActivity">
 
     <TextView
         android:text="@string/you_have_successfully_completed_the_questionnaire_thank_you_for_your_patience_based_on_your_answers_we_have_determined_your_learning_style_to_be_as_follows"

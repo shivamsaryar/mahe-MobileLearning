@@ -3,6 +3,9 @@
     package="com.example.shivam.mobilelearning1">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <service android:name=".MyFirebaseMessagingService">
         <intent-filter>
@@ -27,7 +30,7 @@
             android:name=".A1b_QuestionnaireScrollingActivity"
             android:label="@string/title_activity_questionnaire_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DisplayLearningStyleActivity" />
+        <activity android:name=".A1c_DisplayLearningStyleActivity" />
         <activity android:name=".A1a_GoogleSignInActivity" />
         <activity android:name=".MainActivity" />
         <activity
@@ -42,7 +45,9 @@
         <activity android:name=".A2c2_CourseDetailsActivity" />
         <activity android:name=".A3_CourseTopicsActivity" />
         <activity android:name=".A4_TopicFiles" />
-        <activity android:name=".A5_ViewCoursePDF"></activity>
+        <activity android:name=".A5_ViewCoursePDF" />
+        <activity android:name=".A6_ViewCourseVideo" />
+        <activity android:name=".A2b_HelpInfoActivity"></activity>
     </application>
 
 </manifest>

@@ -18,5 +18,9 @@
             android:id="@+id/nav_discover"
             android:icon="@drawable/earth_icon"
             android:title="Discover" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/ic_guest_user"
+            android:title="Sign Out" />
     </group>
 </menu>

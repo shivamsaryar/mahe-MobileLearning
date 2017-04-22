@@ -86,8 +86,8 @@ public class A3_CourseTopicsActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, myButton.getText().toString());
-                Intent courseDetailsIntent = new Intent(getApplicationContext(), A4_ViewTutorialActivity.class);
-                //startActivity(courseDetailsIntent);
+                Intent courseDetailsIntent = new Intent(getApplicationContext(), A4_TopicFiles.class);
+                startActivity(courseDetailsIntent);
             }
         });
     }

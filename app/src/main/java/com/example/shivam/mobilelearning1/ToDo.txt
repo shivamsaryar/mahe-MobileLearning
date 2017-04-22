@@ -1,0 +1,2 @@
+1. View pdf in phone
+2. save the clicks of each course for the student to count no. of video of pdf clicks

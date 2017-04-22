@@ -213,6 +213,8 @@ public class A1a_GoogleSignInActivity extends BaseActivity implements
             detailTextView.setText("User ID:" + user.getUid());
             Toast.makeText(this, "Hello, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            mRootRef.child("users").child(user.getUid()).child("Account Details").child("Name").setValue(user.getDisplayName());
+            mRootRef.child("users").child(user.getUid()).child("Account Details").child("Email").setValue(user.getEmail());
 
         } else {
             statusTextView.setText("Signed Out");
