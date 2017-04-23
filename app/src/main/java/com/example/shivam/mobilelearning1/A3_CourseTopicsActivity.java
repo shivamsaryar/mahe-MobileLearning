@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,21 +28,42 @@ public class A3_CourseTopicsActivity extends BaseActivity {
     LinearLayout courseTopicsLinearLayout;
     ProgressBar courseTopicsProgressBar;
     LinearLayout.LayoutParams layoutParams;
+    TextView courseHeader;
+    Toolbar toolbar = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_8_course_topics);
 
+        toolbar = (Toolbar) findViewById(R.id.course_topics_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Course Topics");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        courseHeader = (TextView) findViewById(R.id.course_header);
         courseTopicsProgressBar = (ProgressBar) findViewById(R.id.course_topics_progress_bar);
         courseTopicsLinearLayout = (LinearLayout) findViewById(R.id.course_topics_linear_layout);
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0,20,0,0);
 
+        //Get the name of the course that the user wishes to view
         courseBundle = getIntent().getExtras();
-        courseName = courseBundle.getString("CourseName");
+        if(courseBundle != null){
+            courseName = courseBundle.getString("CourseName");
+        }
 
-        mRootRef.child("courses").child(courseName).child("CourseTopics").addValueEventListener(new ValueEventListener() {
+        courseHeader.setText(courseName);
+
+        //get the list of video topics under that particular course topic
+        mRootRef.child("courses").child(courseName).child("CourseTopics").child("Videos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 

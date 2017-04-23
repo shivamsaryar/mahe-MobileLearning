@@ -3,6 +3,7 @@ package com.example.shivam.mobilelearning1;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -29,11 +30,24 @@ public class A2c1_DashDiscoverActivity extends BaseActivity{
     private ProgressBar myProgressBar;
     String courseName;
     Boolean courseAlreadyEnrolled;
+    Toolbar discToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_6_3_dash_discover);
+        discToolbar = (Toolbar) findViewById(R.id.discover_toolbar);
+        setSupportActionBar(discToolbar);
+        getSupportActionBar().setTitle("Discover Courses");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        discToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         myProgressBar = (ProgressBar) findViewById(R.id.progressBar2);

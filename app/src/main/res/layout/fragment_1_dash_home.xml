@@ -1,6 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_linear_layout"
+    android:id="@+id/home_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,19 +12,26 @@
         android:id="@+id/textViewMyCourses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:text="@string/enrolled_courses"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:id="@+id/home_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textViewMyCourses"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"></LinearLayout>
+
     <TextView
         android:id="@+id/textViewNoCourses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="You are currently not enolled into any course"
         android:textSize="25sp"
         android:textStyle="italic" />
@@ -33,6 +40,8 @@
         android:id="@+id/dashHome_progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 
-</LinearLayout>
+</RelativeLayout>

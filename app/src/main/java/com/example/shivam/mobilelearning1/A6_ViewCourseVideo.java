@@ -1,8 +1,10 @@
 package com.example.shivam.mobilelearning1;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,11 +18,24 @@ public class A6_ViewCourseVideo extends BaseActivity {
     VideoView videoView;
     android.widget.MediaController mediaController;
     String videoDownloadURL = "https://firebasestorage.googleapis.com/v0/b/mobilelearning1-576b3.appspot.com/o/Courses%2FJava%20-%20Computer%20Science%2F1-Introduction%2FJava%20Programming%20Tutorial%20-%201%20-%20Installing%20the%20JDK.3gp?alt=media&token=c798fe3c-0017-44b4-9dc5-77d868eaf989";
+    Toolbar videoToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_9_view_course_video);
+        videoToolbar = (Toolbar) findViewById(R.id.video_toolbar);
+        setSupportActionBar(videoToolbar);
+        getSupportActionBar().setTitle("Topic Name");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        videoToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         videoView = (VideoView) findViewById(R.id.videoView);
         mediaController = new android.widget.MediaController(this);
@@ -44,4 +59,5 @@ public class A6_ViewCourseVideo extends BaseActivity {
             }
         });
     }
+
 }

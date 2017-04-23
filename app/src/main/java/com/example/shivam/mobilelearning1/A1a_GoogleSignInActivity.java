@@ -56,11 +56,11 @@ public class A1a_GoogleSignInActivity extends BaseActivity implements
 
         //Buttons
         signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        signOutButton = (Button) findViewById(R.id.sign_out_button);
+        //signOutButton = (Button) findViewById(R.id.sign_out_button);
 
         //Button Listeners
         signInButton.setOnClickListener(this);
-        signOutButton.setOnClickListener(this);
+        //signOutButton.setOnClickListener(this);
 
         // [START config_signIn]
         // Configure Google Sign In
@@ -217,7 +217,7 @@ public class A1a_GoogleSignInActivity extends BaseActivity implements
             mRootRef.child("users").child(user.getUid()).child("Account Details").child("Email").setValue(user.getEmail());
 
         } else {
-            statusTextView.setText("Signed Out");
+            statusTextView.setVisibility(View.INVISIBLE);
             detailTextView.setText(null);
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
         }
@@ -236,8 +236,6 @@ public class A1a_GoogleSignInActivity extends BaseActivity implements
         int i = v.getId();
         if (i == R.id.sign_in_button) {
             signIn();
-        } else if (i == R.id.sign_out_button) {
-            signOut();
         }
     }
 

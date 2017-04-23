@@ -128,4 +128,5 @@
     <string name="enroll">Enroll</string>
     <string name="instructor">Instructor</string>
     <string name="enrolled_courses">Enrolled Courses</string>
+    <string name="help">Help</string>
 </resources>

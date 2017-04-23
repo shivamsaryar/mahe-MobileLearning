@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <service android:name=".MyFirebaseMessagingService">
         <intent-filter>
@@ -48,7 +48,7 @@
         <activity android:name=".A4_TopicFiles" />
         <activity android:name=".A5_ViewCoursePDF" />
         <activity android:name=".A6_ViewCourseVideo" />
-        <activity android:name=".A2b_HelpInfoActivity"></activity>
+        <activity android:name=".A2b_HelpInfoActivity" />
     </application>
 
 </manifest>

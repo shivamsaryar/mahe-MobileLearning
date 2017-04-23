@@ -1,6 +1,8 @@
 package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,9 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class A1_SplashActivity extends AppCompatActivity {
 
@@ -29,6 +34,7 @@ public class A1_SplashActivity extends AppCompatActivity {
         splashProgressBar = (ProgressBar) findViewById(R.id.splash_progress_bar);
         splashProgressBar.setVisibility(View.VISIBLE);
         mAuth = FirebaseAuth.getInstance();
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -45,6 +51,7 @@ public class A1_SplashActivity extends AppCompatActivity {
                 proceed(signedIn);
             }
         };
+
         /*
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser mUser = mAuth.getCurrentUser();

@@ -66,7 +66,6 @@ public class A2a_DashHomeFragment extends Fragment {
                     enrolledCourses.add(child.getKey());
                     Log.i(TAG, child.getKey());
                     courseName = child.getKey();
-
                     //Call createButton function for each of the children
                     createCourseButtons(courseName);
                 }

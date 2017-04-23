@@ -2,77 +2,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.shivam.mobilelearning1.A2b_DashProfileActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/orange_color_digital_abstract_design_hd"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            android:nestedScrollingEnabled="true"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:titleEnabled="false">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
+    <include
+        android:id="@+id/profile_toolbar"
+        layout="@layout/my_toolbar" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_profile_image_2"
         android:layout_width="85dp"
         android:layout_height="85dp"
+        android:layout_below="@id/profile_toolbar"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginTop="140dp"
-        android:src="@drawable/ic_user_2"
-        app:civ_border_width="2dp"
-        app:civ_border_color= "#ffffff"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_dash_profile"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_person"
+        app:civ_border_color="@color/colorPrimaryDark"
+        app:civ_border_width="1dp"
+        app:layout_anchorGravity="top|center_horizontal" />
 
     <TextView
         android:id="@+id/tv_user_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Name"
-        android:textSize="24sp"
         android:layout_below="@+id/user_profile_image_2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="User Name"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView_ls1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Learning Style 1"
+        android:layout_below="@id/tv_user_profile_name"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="60dp"
         android:layout_toStartOf="@+id/tv_user_profile_name"
-        android:layout_marginEnd="16dp" />
+        android:text="Learning Style 1" />
 
     <TextView
         android:id="@+id/textView_ls2"
@@ -100,14 +73,6 @@
         android:layout_below="@+id/textView_ls3"
         android:layout_marginTop="44dp"
         android:text="Learning Style 4" />
-
-    <Button
-        android:id="@+id/button_help"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Help?" />
 
     <TextView
         android:id="@+id/text_user_ls1"
