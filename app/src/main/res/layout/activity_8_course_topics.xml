@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/my_toolbar"
+        <include
             android:id="@+id/course_topics_toolbar"
-            />
+            layout="@layout/my_toolbar" />
 
         <TextView
             android:id="@+id/course_header"
@@ -26,16 +26,17 @@
             android:layout_marginTop="15dp"
             android:text="Course Name"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/course_header">
+            android:layout_below="@+id/course_header"
+            android:layout_marginTop="15dp">
 
             <LinearLayout
                 android:id="@+id/course_topics_linear_layout"

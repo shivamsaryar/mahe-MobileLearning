@@ -49,6 +49,7 @@
         <activity android:name=".A5_ViewCoursePDF" />
         <activity android:name=".A6_ViewCourseVideo" />
         <activity android:name=".A2b_HelpInfoActivity" />
+        <activity android:name=".A2d_DashRecommended"></activity>
     </application>
 
 </manifest>

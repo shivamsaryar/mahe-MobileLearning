@@ -110,9 +110,12 @@ public class A3_CourseTopicsActivity extends BaseActivity {
             public void onClick(View v) {
                 Log.i(TAG, myButton.getText().toString());
                 Intent courseDetailsIntent = new Intent(getApplicationContext(), A4_TopicFiles.class);
+                courseDetailsIntent.putExtra("TopicName", myButton.getText().toString());
+                courseDetailsIntent.putExtra("CourseName", courseName);
                 startActivity(courseDetailsIntent);
             }
         });
+
     }
 
 }

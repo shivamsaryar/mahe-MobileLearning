@@ -189,7 +189,7 @@ public class A2_DashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_recommended) {
             Log.d(TAG, "Recommendations option clicked");
-            toolbar.setTitle("Recommendations for you");
+            startActivity(new Intent(getApplicationContext(), A2d_DashRecommended.class));
         } else if (id == R.id.nav_discover) {
             Log.d(TAG, "Discover option clicked");
             toolbar.setTitle("Discover");

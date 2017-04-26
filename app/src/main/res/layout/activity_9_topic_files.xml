@@ -10,15 +10,35 @@
         android:id="@+id/topics_toolbar"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_course_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/topics_toolbar"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"
+        android:layout_marginTop="34dp"
+        android:text="Course Topic Selected"
         android:textColor="@color/colorPrimary"
-        android:text="TextView" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/topics_toolbar"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button_view_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:text="PDF"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/button_view_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button_view_pdf"
+        android:layout_marginEnd="29dp"
+        android:text="Video" />
 
 
 </RelativeLayout>
