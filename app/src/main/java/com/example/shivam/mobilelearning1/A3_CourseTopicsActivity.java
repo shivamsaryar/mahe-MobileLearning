@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class A3_CourseTopicsActivity extends BaseActivity {
 
     private static final String TAG = "CourseTopics";
@@ -63,7 +65,7 @@ public class A3_CourseTopicsActivity extends BaseActivity {
         courseHeader.setText(courseName);
 
         //get the list of video topics under that particular course topic
-        mRootRef.child("courses").child(courseName).child("CourseTopics").child("Videos").addValueEventListener(new ValueEventListener() {
+        mRootRef.child("courses").child(courseName).child("CourseTopics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 

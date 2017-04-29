@@ -7,4 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.shivam.mobilelearning1.A2b_HelpInfoActivity">
 
+    <WebView
+        android:id="@+id/help_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 </RelativeLayout>

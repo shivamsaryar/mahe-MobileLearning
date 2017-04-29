@@ -42,6 +42,8 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,9 +93,27 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
                 Map<String, Object> childUpdates = new HashMap<>();
                 childUpdates.put(courseName,"ongoing");
                 mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").updateChildren(childUpdates);
+
+                copyNodes();
+
                 Intent mIntent = new Intent(getApplicationContext(), A2_DashboardActivity.class);
                 Toast.makeText(A2c2_CourseDetailsActivity.this, "You have successfully enrolled for the course!", Toast.LENGTH_SHORT).show();
                 startActivity(mIntent);
+            }
+        });
+
+    }
+
+    private void copyNodes() {
+        mRootRef.child("courses").child(courseName).child("CourseTopics").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).setValue(dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 

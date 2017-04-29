@@ -19,22 +19,17 @@ import java.util.Map;
 public class A4_TopicFiles extends BaseActivity {
 
     private static final String TAG = "TopicFiles";
+    Toolbar topicsToolbar;
     TextView topicHeader;
     Button btnViewPdf;
     Button btnViewVideo;
     Bundle topicBundle;
-
     String topicName;
     String courseName;
-
-    Toolbar topicsToolbar;
-
     String pdfViewCount;
     String videoViewCount;
-
     String pdfPath;
     String videoPath;
-
     Integer pdfCounter;
     Integer videoCounter;
 
@@ -43,12 +38,12 @@ public class A4_TopicFiles extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_9_topic_files);
 
+        //set toolbar
         topicsToolbar = (Toolbar) findViewById(R.id.topics_toolbar);
         setSupportActionBar(topicsToolbar);
         getSupportActionBar().setTitle("Topic Materials");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         topicsToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,50 +51,36 @@ public class A4_TopicFiles extends BaseActivity {
             }
         });
 
+        //get bundle extras
         topicBundle = getIntent().getExtras();
         if(topicBundle != null){
             topicName = topicBundle.getString("TopicName");
             courseName = topicBundle.getString("CourseName");
         }
 
+        //set views
         topicHeader = (TextView) findViewById(R.id.textView_course_topic);
         btnViewPdf = (Button) findViewById(R.id.button_view_pdf);
         btnViewVideo = (Button) findViewById(R.id.button_view_video);
-
         topicHeader.setText(topicName);
 
         //Read current pdfCounter of pdf views for the current topic
-        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("pdf").addValueEventListener(new ValueEventListener() {
+        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
-                Map<String, String> pdfMap = dataSnapshot.getValue(genericTypeIndicator );
-                pdfViewCount = pdfMap.get("clicks");
-                pdfPath = pdfMap.get("path");
+                Map<String, String> map = dataSnapshot.getValue(genericTypeIndicator );
+                pdfViewCount = map.get("pdf_views");
+                videoViewCount = map.get("video_views");
+                pdfPath = map.get("pdf_path");
+                videoPath = map.get("video_path");
+
                 pdfCounter = Integer.parseInt(pdfViewCount);
-                pdfCounter++;
-                Log.i(TAG, pdfCounter.toString());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        //Read current pdfCounter of video views for the current topic
-        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("video").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
-                Map<String, String> videoMap = dataSnapshot.getValue(genericTypeIndicator );
-                videoViewCount = videoMap.get("clicks");
-                videoPath = videoMap.get("path");
                 videoCounter = Integer.parseInt(videoViewCount);
-                videoCounter++;
-                Log.i(TAG, videoCounter.toString());
+
+                Log.i(TAG, "pdf_view count: " + pdfCounter.toString());
+                Log.i(TAG, "video_view count: " + videoCounter.toString());
             }
 
             @Override
@@ -112,21 +93,25 @@ public class A4_TopicFiles extends BaseActivity {
         btnViewPdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Map<String, Object> pdfChildUpdates = new HashMap<>();
-                pdfChildUpdates.put("clicks", pdfCounter.toString());
-                pdfChildUpdates.put("path", pdfPath);
-                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("pdf").updateChildren(pdfChildUpdates);
-                startActivity(new Intent(getApplicationContext(), A5_ViewCoursePDF.class));
+                pdfCounter++;
+                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("pdf_views").setValue(pdfCounter.toString());
+                Intent pdfIntent = new Intent(getApplicationContext(), A5_ViewCoursePDF.class);
+                pdfIntent.putExtra("PdfDownloadPath", pdfPath);
+                pdfIntent.putExtra("CourseName", courseName);
+                pdfIntent.putExtra("TopicName", topicName);
+                startActivity(pdfIntent);
             }
         });
         btnViewVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Map<String, Object> videoChildUpdates = new HashMap<>();
-                videoChildUpdates.put("clicks", videoCounter.toString());
-                videoChildUpdates.put("path", videoPath);
-                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("video").updateChildren(videoChildUpdates);
-                startActivity(new Intent(getApplicationContext(), A6_ViewCourseVideo.class));
+                videoCounter++;
+                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("video_views").setValue(videoCounter.toString());
+                Intent vidIntent = new Intent(getApplicationContext(), A6_ViewCourseVideo.class);
+                vidIntent.putExtra("VideoDownloadPath", videoPath);
+                vidIntent.putExtra("CourseName", courseName);
+                vidIntent.putExtra("TopicName", topicName);
+                startActivity(vidIntent);
             }
         });
     }

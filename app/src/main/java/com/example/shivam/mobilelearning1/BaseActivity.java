@@ -17,6 +17,8 @@ import com.google.firebase.storage.StorageReference;
 
 public class BaseActivity extends AppCompatActivity {
 
+    public String globalPdfPath = null;
+
     StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     FirebaseAuth mAuth = FirebaseAuth.getInstance();

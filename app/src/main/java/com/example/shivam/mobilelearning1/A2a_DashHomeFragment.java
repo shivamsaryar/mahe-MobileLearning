@@ -61,6 +61,9 @@ public class A2a_DashHomeFragment extends Fragment {
                 //Show progressBar while loading the buttons
                 homeProgressBar.setVisibility(View.VISIBLE);
 
+                //refresh initial layout
+                homeLinearLayout.removeAllViews();
+
                 //Get snapshot of all the children of users/enrolled_courses/Ongoing
                 for(DataSnapshot child:dataSnapshot.getChildren()){
                     enrolledCourses.add(child.getKey());

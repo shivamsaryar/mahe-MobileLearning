@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_activity_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.shivam.mobilelearning1.A6_ViewCourseVideo">
 
-    <include layout="@layout/my_toolbar"
-        android:id="@+id/video_toolbar" />
+    <include
+        android:id="@+id/video_toolbar"
+        layout="@layout/my_toolbar" />
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/video_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="240dp" />
+        android:layout_height="240dp"
+        android:layout_below="@id/video_toolbar"
+        android:layout_marginTop="5dp" />
 
     <Button
         android:id="@+id/button_play_video"
@@ -25,4 +27,25 @@
         android:layout_marginTop="5dp"
         android:text="Play" />
 
-</RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Video Suggestions"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/next_video_suggestion_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Next video suggestion" />
+
+</LinearLayout>
