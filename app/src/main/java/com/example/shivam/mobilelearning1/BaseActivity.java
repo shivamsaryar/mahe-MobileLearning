@@ -18,6 +18,10 @@ import com.google.firebase.storage.StorageReference;
 public class BaseActivity extends AppCompatActivity {
 
     public String globalPdfPath = null;
+    public String global_learningStyle_1 = null;
+    public String global_learningStyle_2 = null;
+    public String global_learningStyle_3 = null;
+    public String global_learningStyle_4 = null;
 
     StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();

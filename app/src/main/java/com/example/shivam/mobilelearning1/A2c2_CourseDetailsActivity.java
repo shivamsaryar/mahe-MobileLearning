@@ -1,6 +1,7 @@
 package com.example.shivam.mobilelearning1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,7 +60,8 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
         textInstructor = (TextView) findViewById(R.id.textView_course_instructor);
         textDuration = (TextView) findViewById(R.id.textView_course_duration);
         enrollButton = (Button) findViewById(R.id.course_enroll_button);
-
+        enrollButton.setBackgroundColor(Color.BLUE);
+        enrollButton.setTextColor(Color.WHITE);
         courseBundle = getIntent().getExtras();
         if(courseBundle != null){
             courseName = courseBundle.getString("CourseName");
@@ -105,7 +107,7 @@ public class A2c2_CourseDetailsActivity extends AppCompatActivity {
     }
 
     private void copyNodes() {
-        mRootRef.child("courses").child(courseName).child("CourseTopics").addListenerForSingleValueEvent(new ValueEventListener() {
+        mRootRef.child("courses").child(courseName).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).setValue(dataSnapshot.getValue());

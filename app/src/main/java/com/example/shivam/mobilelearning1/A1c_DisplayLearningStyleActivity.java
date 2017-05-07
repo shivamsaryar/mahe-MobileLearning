@@ -30,7 +30,7 @@ public class A1c_DisplayLearningStyleActivity extends BaseActivity{
         app_user_id = mUser.getUid();
 
         //GET LEARNING STYLE DATA FROM BUNDLE
-        app_user_learning_style = new ArrayList<String>();
+        app_user_learning_style = new ArrayList<>();
         questionnaireData = getIntent().getExtras();
         app_user_learning_style = questionnaireData.getStringArrayList("UserLearningStyle");
         pushDataToFirebase(mUser);
@@ -45,6 +45,11 @@ public class A1c_DisplayLearningStyleActivity extends BaseActivity{
             mRootRef.child("users").child(app_user_id).child("Learning Styles").child("learning_style_2").setValue(app_user_learning_style.get(1));
             mRootRef.child("users").child(app_user_id).child("Learning Styles").child("learning_style_3").setValue(app_user_learning_style.get(2));
             mRootRef.child("users").child(app_user_id).child("Learning Styles").child("learning_style_4").setValue(app_user_learning_style.get(3));
+            global_learningStyle_1 = app_user_learning_style.get(0);
+            global_learningStyle_2 = app_user_learning_style.get(1);
+            global_learningStyle_3 = app_user_learning_style.get(2);
+            global_learningStyle_4 = app_user_learning_style.get(3);
+
         }
         else{
             Toast.makeText(this, "Learning Style data not available. Sign in to view.", Toast.LENGTH_SHORT).show();

@@ -87,7 +87,7 @@ public class A2d_DashRecommended extends BaseActivity {
     }
 
     private void addListenerForChildren(final String courseTitle2) {
-        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseTitle2).addValueEventListener(new ValueEventListener() {
+        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseTitle2).child("CourseTopics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 

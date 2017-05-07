@@ -12,6 +12,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import java.io.File;
 
@@ -21,6 +22,8 @@ public class A5_ViewCoursePDF extends AppCompatActivity {
     WebView myPdfWebView;
     Bundle pdfPathBundle;
     String pdfUrl;
+    LinearLayout pdfViewLinearLayout;
+    LinearLayout.LayoutParams layoutParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +32,10 @@ public class A5_ViewCoursePDF extends AppCompatActivity {
 
         pdfPathBundle = getIntent().getExtras();
         pdfUrl = pdfPathBundle.getString("PdfDownloadPath");
-        Log.i(TAG, pdfUrl);
 
+        pdfViewLinearLayout = (LinearLayout) findViewById(R.id.pdfView_linear_layout);
+
+        //set pdf into google pdf viewer
         myPdfWebView = (WebView) findViewById(R.id.pdf_web_view);
         myPdfWebView.getSettings().setJavaScriptEnabled(true);
         myPdfWebView.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + pdfUrl);

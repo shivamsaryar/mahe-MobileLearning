@@ -23,6 +23,7 @@ public class A4_TopicFiles extends BaseActivity {
     TextView topicHeader;
     Button btnViewPdf;
     Button btnViewVideo;
+    Button btnViewQuiz;
     Bundle topicBundle;
     String topicName;
     String courseName;
@@ -62,10 +63,11 @@ public class A4_TopicFiles extends BaseActivity {
         topicHeader = (TextView) findViewById(R.id.textView_course_topic);
         btnViewPdf = (Button) findViewById(R.id.button_view_pdf);
         btnViewVideo = (Button) findViewById(R.id.button_view_video);
+        btnViewQuiz = (Button) findViewById(R.id.quiz_button);
         topicHeader.setText(topicName);
 
         //Read current pdfCounter of pdf views for the current topic
-        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).addValueEventListener(new ValueEventListener() {
+        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child("CourseTopics").child(topicName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -94,7 +96,7 @@ public class A4_TopicFiles extends BaseActivity {
             @Override
             public void onClick(View v) {
                 pdfCounter++;
-                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("pdf_views").setValue(pdfCounter.toString());
+                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child("CourseTopics").child(topicName).child("pdf_views").setValue(pdfCounter.toString());
                 Intent pdfIntent = new Intent(getApplicationContext(), A5_ViewCoursePDF.class);
                 pdfIntent.putExtra("PdfDownloadPath", pdfPath);
                 pdfIntent.putExtra("CourseName", courseName);
@@ -102,16 +104,27 @@ public class A4_TopicFiles extends BaseActivity {
                 startActivity(pdfIntent);
             }
         });
+
         btnViewVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 videoCounter++;
-                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child(topicName).child("video_views").setValue(videoCounter.toString());
+                mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child("CourseTopics").child(topicName).child("video_views").setValue(videoCounter.toString());
                 Intent vidIntent = new Intent(getApplicationContext(), A6_ViewCourseVideo.class);
                 vidIntent.putExtra("VideoDownloadPath", videoPath);
                 vidIntent.putExtra("CourseName", courseName);
                 vidIntent.putExtra("TopicName", topicName);
                 startActivity(vidIntent);
+            }
+        });
+
+        btnViewQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent quizIntent = new Intent(getApplicationContext(), A7_QuizActivity.class);
+                quizIntent.putExtra("CourseName", courseName);
+                quizIntent.putExtra("TopicName", topicName);
+                startActivity(quizIntent);
             }
         });
     }

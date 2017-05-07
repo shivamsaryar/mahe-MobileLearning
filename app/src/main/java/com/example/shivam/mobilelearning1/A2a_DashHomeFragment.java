@@ -52,7 +52,7 @@ public class A2a_DashHomeFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        enrolledCourses = new ArrayList<String>();
+        enrolledCourses = new ArrayList<>();
 
         mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").addValueEventListener(new ValueEventListener() {
             @Override

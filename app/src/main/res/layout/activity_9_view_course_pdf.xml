@@ -7,12 +7,44 @@
     android:orientation="vertical"
     tools:context="com.example.shivam.mobilelearning1.A5_ViewCoursePDF">
 
+    <include layout="@layout/my_toolbar"
+        android:id="@+id/pdfViewToolbar"/>
+
     <WebView
         android:id="@+id/pdf_web_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_weight="1" />
+        android:layout_below="@id/pdfViewToolbar"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1" >
+
+    </WebView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_below="@id/pdf_web_view"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:text="You may also like"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/pdfView_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView3"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
 </RelativeLayout>

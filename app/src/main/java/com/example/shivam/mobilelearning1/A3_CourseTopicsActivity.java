@@ -117,7 +117,6 @@ public class A3_CourseTopicsActivity extends BaseActivity {
                 startActivity(courseDetailsIntent);
             }
         });
-
     }
 
 }

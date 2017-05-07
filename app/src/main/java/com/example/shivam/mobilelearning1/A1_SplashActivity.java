@@ -19,18 +19,15 @@ import java.util.TimerTask;
 
 public class A1_SplashActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
     private static final String MyTAG = "ShivamLog";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    Boolean signedIn;
     ProgressBar splashProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1_splash);
-        Log.i(MyTAG, "onCreate()");
         splashProgressBar = (ProgressBar) findViewById(R.id.splash_progress_bar);
         splashProgressBar.setVisibility(View.VISIBLE);
         mAuth = FirebaseAuth.getInstance();
@@ -40,44 +37,21 @@ public class A1_SplashActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    // User is signed in
-                    Log.d(TAG, "onAuthStateChanged: signed_in with id: " + user.getUid());
-                    signedIn = true;
+                    //user is signed in
+                    splashProgressBar.setVisibility(View.INVISIBLE);
+                    Intent dashboardIntent = new Intent(A1_SplashActivity.this, A2_DashboardActivity.class);
+                    //Intent dashboardIntent = new Intent(A1_SplashActivity.this, A7_QuizActivity.class);
+                    Toast.makeText(getApplicationContext(), "Splash - User signed in", Toast.LENGTH_SHORT).show();
+                    startActivity(dashboardIntent);
                 } else {
-                    // User is signed out
-                    Log.d(TAG, "onAuthStateChanged: signed_out");
-                    signedIn = false;
+                    //user is not signed in
+                    splashProgressBar.setVisibility(View.INVISIBLE);
+                    Intent loginIntent = new Intent(A1_SplashActivity.this, A1a_GoogleSignInActivity.class);
+                    Toast.makeText(getApplicationContext(), "Splash - User signed out", Toast.LENGTH_SHORT).show();
+                    startActivity(loginIntent);
                 }
-                proceed(signedIn);
             }
         };
-
-        /*
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser mUser = mAuth.getCurrentUser();
-        if(mUser != null){
-            signedIn = true;
-        }
-        else{
-            signedIn = false;
-        }
-        proceed(signedIn);
-        */
-    }
-
-    private void proceed(Boolean signedIn) {
-        if(signedIn == true){
-            splashProgressBar.setVisibility(View.INVISIBLE);
-            Intent dashboardIntent = new Intent(A1_SplashActivity.this, A2_DashboardActivity.class);
-            Toast.makeText(this, "Splash - User signed in", Toast.LENGTH_SHORT).show();
-            startActivity(dashboardIntent);
-        }
-        else{
-            splashProgressBar.setVisibility(View.INVISIBLE);
-            Intent loginIntent = new Intent(A1_SplashActivity.this, A1a_GoogleSignInActivity.class);
-            Toast.makeText(this, "Splash - User signed out", Toast.LENGTH_SHORT).show();
-            startActivity(loginIntent);
-        }
     }
 
     @Override
@@ -85,12 +59,6 @@ public class A1_SplashActivity extends AppCompatActivity {
         super.onStart();
         Log.i(MyTAG, "onStart");
         mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(MyTAG, "onPause");
     }
 
     @Override
@@ -107,18 +75,5 @@ public class A1_SplashActivity extends AppCompatActivity {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(MyTAG, "onRestart");
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(MyTAG, "onDestroy");
     }
 }

@@ -62,6 +62,8 @@ public class A6_ViewCourseVideo extends BaseActivity {
         videoPath = videoBundle.getString("VideoDownloadPath");
         courseName = videoBundle.getString("CourseName");
         topicName = videoBundle.getString("TopicName");
+        getSupportActionBar().setTitle(topicName);
+        getSupportActionBar().setSubtitle(courseName);
         Log.i(TAG, "Video download path from bundle: " + videoPath);
 
         videoView = (VideoView) findViewById(R.id.videoView);
@@ -73,7 +75,7 @@ public class A6_ViewCourseVideo extends BaseActivity {
         layoutParams.setMargins(0,20,0,0);
 
         //get list of all topics
-        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).addValueEventListener(new ValueEventListener() {
+        mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child("CourseTopics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot child:dataSnapshot.getChildren()){
