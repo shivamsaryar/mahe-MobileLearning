@@ -25,11 +25,11 @@
         android:id="@+id/button_view_pdf"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
         android:text="PDF"
         android:textSize="18sp"
-        android:layout_above="@+id/quiz_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/view_intuitive_test_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/button_view_video"
@@ -38,17 +38,28 @@
         android:text="Video"
         android:textSize="18sp"
         android:layout_above="@+id/button_view_pdf"
-        android:layout_alignStart="@+id/button_view_pdf"
-        android:layout_marginBottom="20dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/quiz_button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:text="Quiz"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/view_intuitive_test_button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Intuitive Test"
+        android:textSize="18sp"
+        android:layout_above="@+id/quiz_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

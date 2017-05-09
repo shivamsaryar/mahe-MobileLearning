@@ -13,7 +13,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class A4_TopicFiles extends BaseActivity {
@@ -24,6 +23,7 @@ public class A4_TopicFiles extends BaseActivity {
     Button btnViewPdf;
     Button btnViewVideo;
     Button btnViewQuiz;
+    Button btnViewIntuitiveTest;
     Bundle topicBundle;
     String topicName;
     String courseName;
@@ -64,6 +64,7 @@ public class A4_TopicFiles extends BaseActivity {
         btnViewPdf = (Button) findViewById(R.id.button_view_pdf);
         btnViewVideo = (Button) findViewById(R.id.button_view_video);
         btnViewQuiz = (Button) findViewById(R.id.quiz_button);
+        btnViewIntuitiveTest = (Button) findViewById(R.id.view_intuitive_test_button);
         topicHeader.setText(topicName);
 
         //Read current pdfCounter of pdf views for the current topic
@@ -127,6 +128,17 @@ public class A4_TopicFiles extends BaseActivity {
                 quizIntent.putExtra("CourseName", courseName);
                 quizIntent.putExtra("TopicName", topicName);
                 startActivity(quizIntent);
+            }
+        });
+
+
+        btnViewIntuitiveTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intTestIntent = new Intent(getApplicationContext(), A8_IntuitiveTest.class);
+                intTestIntent.putExtra("CourseName", courseName);
+                intTestIntent.putExtra("TopicName", topicName);
+                startActivity(intTestIntent);
             }
         });
     }
