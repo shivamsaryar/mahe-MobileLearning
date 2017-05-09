@@ -16,9 +16,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class A3_CourseTopicsActivity extends BaseActivity {
 
@@ -97,6 +99,28 @@ public class A3_CourseTopicsActivity extends BaseActivity {
 
             }
         });
+
+        //get user learning style
+        mRootRef.child("users").child(mUser.getUid()).child("Learning Styles").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
+                Map<String, String> map = dataSnapshot.getValue(genericTypeIndicator );
+                String learning_style_3 = map.get("learning_style_3");
+                global_learningStyle_1 = map.get("learning_style_1");
+                global_learningStyle_2 = map.get("learning_style_2");
+                global_learningStyle_3 = map.get("learning_style_3");
+                global_learningStyle_4 = map.get("learning_style_4");
+
+                Log.i(TAG, learning_style_3);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void createTopicButtons(String str) {

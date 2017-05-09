@@ -64,7 +64,6 @@ public class A2d_DashRecommended extends BaseActivity {
         });
     }
 
-
     private void getUserLearningStyle() {
         mRootRef.child("users").child(mUser.getUid()).child("Learning Styles").addValueEventListener(new ValueEventListener() {
             @Override

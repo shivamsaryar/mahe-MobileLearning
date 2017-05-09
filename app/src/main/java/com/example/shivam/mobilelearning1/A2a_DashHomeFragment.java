@@ -21,9 +21,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class A2a_DashHomeFragment extends Fragment {
 
@@ -54,16 +56,16 @@ public class A2a_DashHomeFragment extends Fragment {
 
         enrolledCourses = new ArrayList<>();
 
+
+
         mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 //Show progressBar while loading the buttons
                 homeProgressBar.setVisibility(View.VISIBLE);
-
                 //refresh initial layout
                 homeLinearLayout.removeAllViews();
-
                 //Get snapshot of all the children of users/enrolled_courses/Ongoing
                 for(DataSnapshot child:dataSnapshot.getChildren()){
                     enrolledCourses.add(child.getKey());
@@ -72,7 +74,6 @@ public class A2a_DashHomeFragment extends Fragment {
                     //Call createButton function for each of the children
                     createCourseButtons(courseName);
                 }
-
                 if(enrolledCourses.size() == 0){
                     noCoursesText.setVisibility(View.VISIBLE);
                 }

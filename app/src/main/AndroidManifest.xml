@@ -50,7 +50,9 @@
         <activity android:name=".A6_ViewCourseVideo" />
         <activity android:name=".A2b_HelpInfoActivity" />
         <activity android:name=".A2d_DashRecommended" />
-        <activity android:name=".A7_QuizActivity"></activity>
+        <activity android:name=".A7_QuizActivity" />
+        <activity android:name=".A8_IntuitiveTest" />
+        <activity android:name=".A9_QuizResult"></activity>
     </application>
 
 </manifest>

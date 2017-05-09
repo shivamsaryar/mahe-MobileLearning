@@ -7,44 +7,101 @@
     android:orientation="vertical"
     tools:context="com.example.shivam.mobilelearning1.A5_ViewCoursePDF">
 
-    <include layout="@layout/my_toolbar"
-        android:id="@+id/pdfViewToolbar"/>
+    <include
+        android:id="@+id/pdf_view_toolbar"
+        layout="@layout/my_toolbar" />
 
-    <WebView
-        android:id="@+id/pdf_web_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/pdfViewToolbar"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1" >
-
-    </WebView>
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_below="@id/pdf_web_view"
-        android:layout_height="2dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/view"
-        android:text="You may also like"
-        android:textSize="18sp" />
-
-    <LinearLayout
-        android:id="@+id/pdfView_linear_layout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textView3"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical">
+        android:layout_below="@id/pdf_view_toolbar">
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pdf_view_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <WebView
+                android:id="@+id/pdf_web_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/pdf_view_toolbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+            </WebView>
+
+            <Button
+                android:id="@+id/view_pdf_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View PDF" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/pdf_web_view"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/view_next_pdf_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view"
+                android:layout_weight="1"
+                android:text="Next Topic PDF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/next_pdf_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Next PDF Suggestion" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/video_sugg_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View Video for this topic"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/view_topic_video_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View Video" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/txt_other_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Other Topics"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

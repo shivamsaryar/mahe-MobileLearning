@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/video_activity_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,40 +11,78 @@
         android:id="@+id/video_toolbar"
         layout="@layout/my_toolbar" />
 
-    <VideoView
-        android:id="@+id/videoView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_below="@id/video_toolbar"
-        android:layout_marginTop="5dp" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/video_toolbar">
 
-    <Button
-        android:id="@+id/button_play_video"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/videoView"
-        android:layout_marginTop="5dp"
-        android:text="Play" />
+        <LinearLayout
+            android:id="@+id/video_activity_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="15dp"
-        android:background="@android:color/darker_gray" />
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_below="@id/video_toolbar"
+                android:layout_marginTop="5dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Video Suggestions"
-        android:textSize="20sp" />
+            <Button
+                android:id="@+id/button_play_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoView"
+                android:text="Play" />
 
-    <Button
-        android:id="@+id/next_video_suggestion_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Next video suggestion" />
+            <TextView
+                android:id="@+id/up_next_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="Up Next" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/next_video_suggestion_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next video suggestion" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/pdf_sugg_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="View PDF for this topic" />
+
+            <Button
+                android:id="@+id/view_topic_pdf_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View PDF" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other Topics"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -99,6 +99,7 @@ public class A4_TopicFiles extends BaseActivity {
                 mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child("CourseTopics").child(topicName).child("pdf_views").setValue(pdfCounter.toString());
                 Intent pdfIntent = new Intent(getApplicationContext(), A5_ViewCoursePDF.class);
                 pdfIntent.putExtra("PdfDownloadPath", pdfPath);
+                pdfIntent.putExtra("VideoDownloadPath", videoPath);
                 pdfIntent.putExtra("CourseName", courseName);
                 pdfIntent.putExtra("TopicName", topicName);
                 startActivity(pdfIntent);
@@ -112,6 +113,7 @@ public class A4_TopicFiles extends BaseActivity {
                 mRootRef.child("users").child(mUser.getUid()).child("Enrolled_Courses").child("Ongoing").child(courseName).child("CourseTopics").child(topicName).child("video_views").setValue(videoCounter.toString());
                 Intent vidIntent = new Intent(getApplicationContext(), A6_ViewCourseVideo.class);
                 vidIntent.putExtra("VideoDownloadPath", videoPath);
+                vidIntent.putExtra("PdfDownloadPath", pdfPath);
                 vidIntent.putExtra("CourseName", courseName);
                 vidIntent.putExtra("TopicName", topicName);
                 startActivity(vidIntent);
